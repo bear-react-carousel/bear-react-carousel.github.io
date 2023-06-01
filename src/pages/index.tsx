@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
+import 'bear-react-carousel/dist/index.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();

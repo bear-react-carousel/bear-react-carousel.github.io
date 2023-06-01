@@ -1,3 +1,5 @@
+import BearCarousel, {TBearSlideItemDataList, BearSlideItem} from 'bear-react-carousel';
+
 ---
 sidebar_position: 4
 ---
@@ -127,7 +129,39 @@ export const Highlight = ({children, color}) => (
 This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
 
 This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+
 ```
+
+
+
+export const CustomBanner = () => {
+    const images = [
+        {id: 1, color: 'red'},
+        {id: 2, color: 'green'},
+        {id: 3, color: 'blue'},
+        {id: 4, color: 'gray'},
+        {id: 5, color: 'white'},
+        {id: 6, color: 'black'},
+        {id: 7, color: 'yellow'},
+        {id: 8, color: 'purple'},
+    ];
+    const bearSlideItemData = images.map(row => {
+        return {
+            key: row.id,
+            children: <BearSlideItem as="card">
+                <div
+                    style={{height: '100%', display: 'flex', fontSize: '40px', backgroundColor: row.color}}
+                />
+            </BearSlideItem>
+        };
+    });
+    return <BearCarousel
+        data={bearSlideItemData}
+        staticHeight="200px"
+        isDebug
+    />
+}
+
 
 export const Highlight = ({children, color}) => (
   <span
@@ -139,7 +173,7 @@ export const Highlight = ({children, color}) => (
       cursor: 'pointer',
     }}
     onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`);
+      alert(`You clicked the color11 ${color} with label ${children}`);
     }}>
     {children}
   </span>
@@ -148,3 +182,6 @@ export const Highlight = ({children, color}) => (
 This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
 
 This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+
+
+<CustomBanner/>
