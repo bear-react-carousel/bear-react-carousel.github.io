@@ -1,3 +1,24 @@
+import BearCarousel, {BearSlideItem} from 'bear-react-carousel';
+export const CustomBanner = () => {
+    const images = [
+        {id: 1, image: "https://dummyimage.com/900x400/dee2e6/6c757d.jpg"},
+        {id: 2, image: "https://dummyimage.com/900x400/dee2e6/6c757d.jpg"},
+        {id: 3, image: "https://dummyimage.com/900x400/dee2e6/6c757d.jpg"},
+    ];
+    const bearSlideItemData = images.map(row => {
+        return {
+            key: row.id,
+            children: <BearSlideItem imageUrl={row.image}/>
+        };
+    });
+    return <BearCarousel
+        data={bearSlideItemData}
+        staticHeight="250px"
+    />
+}
+
+
+
 ---
 sidebar_position: 1
 ---
@@ -47,13 +68,18 @@ export const CustomBanner = () => {
     const bearSlideItemData: TBearSlideItemDataList = images.map(row => {
         return {
             key: row.id,
-            children: <BearSlideItem imageUrl={row.imageUrl}/>
+            children: <BearSlideItem imageUrl={row.image}/>
         };
     });
 
     return <BearCarousel 
         data={bearSlideItemData} 
-        staticHeight="400px"
+        staticHeight="250px"
     />
 }
 ```
+
+Then you will see this
+
+
+<CustomBanner/>

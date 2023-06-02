@@ -4,7 +4,12 @@ sidebar_position: 1
 
 # Height
 
-Let's discover **Docusaurus in less than 5 minutes**.
+:::danger Focus
+
+It is recommended to use a static height, although the auto height is very convenient, but it will cause bad visual effects, flashing to open the layout
+:::
+
+
 
 ## Static Height
 
