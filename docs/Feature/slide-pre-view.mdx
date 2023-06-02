@@ -1,0 +1,56 @@
+import BearCarousel, {BearSlideItem} from 'bear-react-carousel';
+const images = [
+    {id: 1, image: "https://carousel.bearests.com/static/sample/cat/01.jpg"},
+    {id: 2, image: "https://carousel.bearests.com/static/sample/cat/02.jpg"},
+    {id: 3, image: "https://carousel.bearests.com/static/sample/cat/03.jpg"},
+    {id: 4, image: "https://carousel.bearests.com/static/sample/cat/04.jpg"},
+    {id: 5, image: "https://carousel.bearests.com/static/sample/cat/05.jpg"},
+];
+const imageData = images.map(row => ({key: row.id, children: <BearSlideItem as="image" imageUrl={row.image}/>}));
+const divData = images.map(row => ({key: row.id, children: <BearSlideItem imageUrl={row.image}/>}));
+export const CustomBanner = (props) => {
+    return <BearCarousel
+        {...props}
+        staticHeight="250px"
+        isEnableNavButton
+    />
+}
+
+
+---
+sidebar_position: 1
+---
+
+# SlidesPerView
+Specify how many to display at a time within the visible range, or how many to display on a page
+
+## Number
+This represents a page displaying 3 items
+
+```tsx
+<BearCarousel 
+    // ...ignore some 
+    slidesPerView={3}
+/>
+```
+
+<CustomBanner
+    slidesPerView={3}
+    data={divData}
+/>
+
+
+## Auto
+
+If each of your carousel items is a fixed-size Card, but you don't want to change the Card Size because of the container size, you can use `auto`
+
+```tsx
+<BearCarousel 
+    // ...ignore some 
+    slidesPerView="auto"
+/>
+```
+<CustomBanner
+    slidesPerView="auto"
+    data={imageData}
+/>
