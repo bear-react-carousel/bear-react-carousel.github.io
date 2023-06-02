@@ -6,7 +6,7 @@ sidebar_position: 1
 
 This is a carousel developed directly using React + Flexbox 
 
-:::danger Focus
+:::tip Tip
 
 non-js secondary development package into React, and only include the features you need, not too many cool effects that might complicate your usage or create other weird issues
 

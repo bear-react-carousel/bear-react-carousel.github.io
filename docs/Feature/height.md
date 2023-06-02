@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Height
 
-:::danger Focus
+:::caution Suggestion
 
 It is recommended to use a static height, although the auto height is very convenient, but it will cause bad visual effects, flashing to open the layout
 :::
