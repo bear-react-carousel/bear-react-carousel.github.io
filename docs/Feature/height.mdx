@@ -1,3 +1,5 @@
+import Carousel from '@site/src/components/Carousel';
+
 ---
 sidebar_position: 1
 ---
@@ -14,11 +16,13 @@ It is recommended to use a static height, although the auto height is very conve
 You can use your own units **like px, rem, %**
 
 ```tsx
-<BearCarousel 
+<BearCarousel
     // ...ignore some 
     staticHeight="250px"
 />
 ```
+
+<Carousel/>
 
 ## Aspect Ratio Height
 
@@ -27,6 +31,13 @@ If you want to set the height proportionally, you can do
 ```tsx
 <BearCarousel 
     // ...ignore some 
-    aspectRatio={{ widthRatio: 16, heightRatio: 9 }}
+    aspectRatio={{ widthRatio: 21, heightRatio: 9 }}
 />
 ```
+
+You can move the window to see
+
+<Carousel
+    staticHeight={undefined}
+    aspectRatio={{ widthRatio: 21, heightRatio: 9 }}
+/>

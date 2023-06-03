@@ -1,20 +1,4 @@
-import BearCarousel, {BearSlideItem} from 'bear-react-carousel';
-const images = [
-    {id: 1, image: "https://carousel.bearests.com/static/sample/cat/01.jpg"},
-    {id: 2, image: "https://carousel.bearests.com/static/sample/cat/02.jpg"},
-    {id: 3, image: "https://carousel.bearests.com/static/sample/cat/03.jpg"},
-    {id: 4, image: "https://carousel.bearests.com/static/sample/cat/04.jpg"},
-    {id: 5, image: "https://carousel.bearests.com/static/sample/cat/05.jpg"},
-];
-const imageData = images.map(row => ({key: row.id, children: <BearSlideItem as="image" imageUrl={row.image}/>}));
-const divData = images.map(row => ({key: row.id, children: <BearSlideItem imageUrl={row.image}/>}));
-export const CustomBanner = (props) => {
-    return <BearCarousel
-        {...props}
-        staticHeight="250px"
-        isEnableNavButton
-    />
-}
+import Carousel, {imageData} from '@site/src/components/Carousel';
 
 
 ---
@@ -34,23 +18,62 @@ This represents a page displaying 3 items
 />
 ```
 
-<CustomBanner
+<Carousel
     slidesPerView={3}
-    data={divData}
 />
+
+### Show half
+
+:::tip Tip
+
+You can also use it with `isCenteredSlides` to achieve good results.
+
+:::
+
+Decimals can be set to display half of the picture. This display method is calculated by CSS Flexbox.
+
+
+
+
+
+```tsx
+<BearCarousel
+    // ...ignore some
+    slidesPerView={1.5}
+/>
+```
+
+
+<Carousel
+    slidesPerView={1.5}
+/>
+
 
 
 ## Auto
 
+
+
+:::tip Tip
+
+You can also use it with `isCenteredSlides` to achieve good results.
+
+:::
+
+
 If each of your carousel items is a fixed-size Card, but you don't want to change the Card Size because of the container size, you can use `auto`
 
 ```tsx
-<BearCarousel 
+<BearCarousel
     // ...ignore some 
     slidesPerView="auto"
 />
 ```
-<CustomBanner
-    slidesPerView="auto"
+
+
+<Carousel
     data={imageData}
+    slidesPerView="auto"
 />
+
+

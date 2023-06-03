@@ -1,19 +1,29 @@
 import BearCarousel, {BearSlideItem} from 'bear-react-carousel';
 export const CustomBanner = () => {
     const images = [
-        {id: 1, image: "https://dummyimage.com/900x400/dee2e6/6c757d.jpg"},
-        {id: 2, image: "https://dummyimage.com/900x400/dee2e6/6c757d.jpg"},
-        {id: 3, image: "https://dummyimage.com/900x400/dee2e6/6c757d.jpg"},
+        {id: 1, color: 'green'},
+        {id: 2, color: 'blue'},
+        {id: 3, color: 'gray'},
+        {id: 4, color: 'white'},
+        {id: 5, color: 'black'},
+        {id: 6, color: 'yellow'},
+        {id: 7, color: 'purple'},
+        {id: 8, color: 'red'},
     ];
     const bearSlideItemData = images.map(row => {
         return {
             key: row.id,
-            children: <BearSlideItem imageUrl={row.image}/>
+            children: <BearSlideItem>
+                <div style={{height: '100%', backgroundColor: row.color}}/>
+            </BearSlideItem>
         };
     });
     return <BearCarousel
         data={bearSlideItemData}
         staticHeight="250px"
+        isEnableNavButton
+        isEnablePagination
+        isDebug
     />
 }
 
@@ -59,22 +69,31 @@ Then use code
 import BearCarousel, {TBearSlideItemDataList, BearSlideItem} from 'bear-react-carousel';
 
 const images = [
-  {id: 1, image: "https://dummyimage.com/900x400/dee2e6/6c757d.jpg"},
-  {id: 2, image: "https://dummyimage.com/900x400/dee2e6/6c757d.jpg"},
-  {id: 3, image: "https://dummyimage.com/900x400/dee2e6/6c757d.jpg"},
+    {id: 1, color: 'green'},
+    {id: 2, color: 'blue'},
+    {id: 3, color: 'gray'},
+    {id: 4, color: 'white'},
+    {id: 5, color: 'black'},
+    {id: 6, color: 'yellow'},
+    {id: 7, color: 'purple'},
+    {id: 8, color: 'red'},
 ];
 
 export const CustomBanner = () => {
     const bearSlideItemData: TBearSlideItemDataList = images.map(row => {
         return {
             key: row.id,
-            children: <BearSlideItem imageUrl={row.image}/>
+            children: <BearSlideItem>
+                <div style={{height: '100%', backgroundColor: row.color}}/>
+            </BearSlideItem>
         };
     });
-
-    return <BearCarousel 
+    return <BearCarousel
         data={bearSlideItemData} 
         staticHeight="250px"
+        isEnableNavButton
+        isEnablePagination
+        isDebug
     />
 }
 ```

@@ -1,21 +1,4 @@
-import BearCarousel, {BearSlideItem} from 'bear-react-carousel';
-const images = [
-    {id: 1, image: "https://carousel.bearests.com/static/sample/cat/01.jpg"},
-    {id: 2, image: "https://carousel.bearests.com/static/sample/cat/02.jpg"},
-    {id: 3, image: "https://carousel.bearests.com/static/sample/cat/03.jpg"},
-    {id: 4, image: "https://carousel.bearests.com/static/sample/cat/04.jpg"},
-    {id: 5, image: "https://carousel.bearests.com/static/sample/cat/05.jpg"},
-];
-const imageData = images.map(row => ({key: row.id, children: <BearSlideItem as="image" imageUrl={row.image}/>}));
-export const CustomBanner = () => {
-    return <BearCarousel
-        data={imageData}
-        slidesPerView="auto"
-        staticHeight="350px"
-        isCenteredSlides
-        isEnableNavButton
-    />
-}
+import Carousel from '@site/src/components/Carousel';
 
 
 ---
@@ -27,9 +10,13 @@ SlidesPerView can be used with number or auto, there is no limit
 
 ```tsx
 <BearCarousel 
-    // ...ignore some 
+    // ...ignore some
+    slidesPerView={1.5}
     isCenteredSlides
 />
 ```
 
-<CustomBanner/>
+<Carousel
+    slidesPerView={1.5}
+    isCenteredSlides
+/>

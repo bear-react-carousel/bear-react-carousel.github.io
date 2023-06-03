@@ -2668,10 +2668,10 @@ batch@0.6.1:
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
   integrity sha512-x+VAiMRL6UPkx+kudNvxTl6hB2XNNCG2r+7wixVfIYwu/2HKRXimwQyaumLjMveWvT2Hkd/cAJw+QBMfJ/EKVw==
 
-bear-react-carousel@^4.0.1-alpha.0:
-  version "4.0.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/bear-react-carousel/-/bear-react-carousel-4.0.1-alpha.0.tgz#31c2ceeab0f2c65cf7964529e40253366905e0a1"
-  integrity sha512-Fvfn+6NliZ4RywbWS0z0X0W13+OwAYarBrn6ZpL/EKS18PmLjiZfa3mTCp6JEM6E5yDuI0ngYRGa7xC8gpR6YA==
+bear-react-carousel@^4.0.1-alpha.1:
+  version "4.0.1-alpha.1"
+  resolved "https://registry.yarnpkg.com/bear-react-carousel/-/bear-react-carousel-4.0.1-alpha.1.tgz#f02a801fbebf63ce9ae6842549bebbe7303d5564"
+  integrity sha512-Yy2/WElr3uze6dWrp/0qhtjSnyUbhS7ecVZRvhJfci0gfMdrzAYSDn7qVzbbQnzkuokskcMmRp7liqvIbJBH0w==
   dependencies:
     react "^18.x"
     react-dom "^18.x"
