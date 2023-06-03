@@ -1,0 +1,36 @@
+---
+sidebar_label: Auto Play
+sidebar_position: 4
+---
+
+import Carousel from '@site/src/components/Carousel';
+
+
+# Auto Play
+
+:::caution Suggestion
+
+auto-play time default is 5000ms
+
+Loop mode must be enabled
+:::
+
+If you want to play the carousel automatically, you can use this mode. When the user manually operates, he will pause and wait for the operation to end before restarting the timing playback
+```tsx
+<BearCarousel 
+    // ...ignore some
+    isEnableLoop
+    isEnableAutoPlay
+    autoPlayTime={1500} // default(5000ms)
+/>
+```
+
+Wait 1.5sec play
+
+<Carousel
+    staticHeight="250px"
+    isEnableLoop
+    isEnableAutoPlay
+    autoPlayTime={1500}
+    isDebug
+/>

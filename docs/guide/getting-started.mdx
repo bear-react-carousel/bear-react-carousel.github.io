@@ -1,46 +1,4 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-
-
-
-
-
-
-import BearCarousel, {BearSlideItem} from 'bear-react-carousel';
-export const CustomBanner = () => {
-    const images = [
-        {id: 1, color: 'green'},
-        {id: 2, color: 'blue'},
-        {id: 3, color: 'gray'},
-        {id: 4, color: 'white'},
-        {id: 5, color: 'black'},
-        {id: 6, color: 'yellow'},
-        {id: 7, color: 'purple'},
-        {id: 8, color: 'red'},
-    ];
-    const bearSlideItemData = images.map(row => {
-        return {
-            key: row.id,
-            children: <BearSlideItem>
-                <div style={{height: '100%', backgroundColor: row.color}}/>
-            </BearSlideItem>
-        };
-    });
-    return <BearCarousel
-        data={bearSlideItemData}
-        staticHeight="250px"
-        isEnableNavButton
-        isEnablePagination
-        isDebug
-    />
-}
-
-
-
----
-sidebar_position: 1
----
+import Carousel, {colorData} from '@site/src/components/Carousel';
 
 # Getting Started
 
@@ -112,4 +70,10 @@ export const CustomBanner = () => {
 Then you will see this
 
 
-<CustomBanner/>
+<Carousel
+    data={colorData}
+    staticHeight="250px"
+    isEnableNavButton
+    isEnablePagination
+    isDebug
+/>
