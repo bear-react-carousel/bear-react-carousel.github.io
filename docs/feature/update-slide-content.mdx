@@ -1,0 +1,77 @@
+import StateCarousel from '@site/src/components/Carousel/StateCarousel';
+
+
+
+
+---
+sidebar_position: 1
+---
+
+# Update Slide Content
+If you want to change the content of the slide item, such as changing the display switching of a certain value, you can choose to play tricks on the `key`, or turn on the `isSlideItemMemo` mode, and use `useMemo` deps to determine whether to switch the item
+
+
+## Use Key Cache
+
+:::tip Tip
+
+This is a ***default cache mode***, and it will decide whether to regenerate the slideItem based on all key values, because we don't want to regenerate the SlideItem when the slide index changes, but there is a need to update the SlideItem
+:::
+
+
+```tsx
+const StateCarousel = () => {
+    const [activeId, setActiveId] = React.useState(0);
+
+    const myData = images.map(row => {
+        const isActive = row.id === activeId;
+        return {
+            key: [row.id, isActive].join('-'),
+            children: <BearSlideItem as="image"
+                 imageUrl={row.image}
+                 onClick={() => setActiveId(row.id)}
+                 style={isActive ? {transition: 'filter .4s', filter: 'blur(4px)'}: undefined}
+            />
+        };
+    });
+
+    return <BearCarousel
+        data={myData}
+    />
+}
+```
+
+
+
+## Use Memo Cache
+
+If you don't want to mess with the id, you can use useMemo's deps
+
+```tsx
+const StateCarousel = () => {
+    const [activeId, setActiveId] = React.useState(0);
+
+    const myData = React.useMemo(() => images.map(row => {
+        const isActive = row.id === activeId;
+        return {
+            key: row.id,
+            children: <BearSlideItem as="image"
+                 imageUrl={row.image}
+                 onClick={() => setActiveId(row.id)}
+                 style={isActive ? {transition: 'filter .4s', filter: 'blur(4px)'}: undefined}
+            />
+        };
+    }), [activeId]);
+
+    return <BearCarousel
+        data={myData}
+        isSlideItemMemo
+    />
+}
+```
+
+Try click slideItem
+
+<StateCarousel/>
+
+
