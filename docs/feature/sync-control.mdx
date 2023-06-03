@@ -7,7 +7,7 @@ import SyncCarousel from '@site/src/components/Carousel/SyncCarousel';
 sidebar_position: 1
 ---
 
-## Sync Control Carousel
+# Sync Control
 
 Synchronous control navigation items, currently ***only supports one-way synchronization***
 
@@ -16,8 +16,14 @@ const SyncCarousel = () => {
     const syncCarouselRef = React.useRef<BearCarousel>(null);
 
     return <div>
-        <BearCarousel ref={syncCarouselRef}/>
-        <BearCarousel syncCarouselRef={syncCarouselRef}/>
+        <BearCarousel
+            // ...ignore some
+            ref={syncCarouselRef}
+        />
+        <BearCarousel
+            // ...ignore some
+            syncCarouselRef={syncCarouselRef}
+        />
     </div>
 }
 ```
