@@ -1,0 +1,29 @@
+import SyncCarousel from '@site/src/components/Carousel/SyncCarousel';
+
+
+
+
+---
+sidebar_position: 1
+---
+
+## Sync Control Carousel
+
+Synchronous control navigation items, currently ***only supports one-way synchronization***
+
+```tsx
+const SyncCarousel = () => {
+    const syncCarouselRef = React.useRef<BearCarousel>(null);
+
+    return <div>
+        <BearCarousel ref={syncCarouselRef}/>
+        <BearCarousel syncCarouselRef={syncCarouselRef}/>
+    </div>
+}
+```
+
+Try click slideItem
+
+<SyncCarousel/>
+
+
