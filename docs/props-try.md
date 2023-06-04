@@ -1,4 +1,5 @@
 ---
+hidden: true
 sidebar_position: 2
 ---
 
