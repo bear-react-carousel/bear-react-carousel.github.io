@@ -2,23 +2,8 @@
 sidebar_position: 7
 ---
 
-import Carousel from '@site/src/components/Carousel';
-const breakpoints = {
-    '768': {
-        slidesPerView: 2,
-        aspectRatio: {widthRatio: 16, heightRatio: 9},
-        isEnableLoop: false,
-        isEnablePagination: false,
-        isEnableNavButton: false,
-    },
-    '1200': {
-        'slidesPerView': 4,
-        'aspectRatio': {widthRatio: 32, heightRatio: 9},
-        'isEnableLoop': true,
-        'isEnablePagination': true,
-        'isEnableNavButton': true,
-    }
-}
+import Carousel from '@site/src/components/Carousel/BreakpointsCarousel';
+
 
 # Responsive
 
@@ -57,10 +42,4 @@ If you need to use different display methods in different sizes, you can try thi
 
 You can move the window to see
 
-<Carousel
-    slidesPerView={1}
-    aspectRatio={{widthRatio: 22, heightRatio: 9}}
-    isEnablePagination
-    isEnableLoop
-    breakpoints={breakpoints}
-/>
+<Carousel/>
