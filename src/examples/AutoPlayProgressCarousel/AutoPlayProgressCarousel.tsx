@@ -5,6 +5,7 @@ import {media} from 'bear-react-grid';
 import {images} from '../../components/Carousel/data';
 import gridConfig from "@site/src/config/grid";
 import {GridThemeProvider} from "bear-react-grid";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 
 // 輪播項目
@@ -33,23 +34,26 @@ const AutoPlayProgressCarousel = ({
 
     return <CarouselBox className="mb-4 mb-lg-5">
         <GridThemeProvider gridTheme={gridConfig}>
-
-        <BearCarousel
-            data={isLoadData ? bearSlideItemData: []}
-            slidesPerView={1}
-            slidesPerGroup={1}
-            isEnablePagination
-            isEnableNavButton
-            isEnableLoop
-            autoPlayTime={autoPlayTime}
-            isEnableAutoPlay
-            aspectRatio={{widthRatio: 16, heightRatio: 9}}
-            breakpoints={{
-                1200: {
-                    aspectRatio: {widthRatio: 32, heightRatio: 9}
-                }
-            }}
-        />
+            <BrowserOnly>
+                {() => {
+                    return <BearCarousel
+                        data={isLoadData ? bearSlideItemData: []}
+                        slidesPerView={1}
+                        slidesPerGroup={1}
+                        isEnablePagination
+                        isEnableNavButton
+                        isEnableLoop
+                        autoPlayTime={autoPlayTime}
+                        isEnableAutoPlay
+                        aspectRatio={{widthRatio: 16, heightRatio: 9}}
+                        breakpoints={{
+                            1200: {
+                                aspectRatio: {widthRatio: 32, heightRatio: 9}
+                            }
+                        }}
+                    />
+                }}
+            </BrowserOnly>
         </GridThemeProvider>
     </CarouselBox>;
 };

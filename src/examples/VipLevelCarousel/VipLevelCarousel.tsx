@@ -7,6 +7,7 @@ import {vipData, levelOption} from './data';
 
 // Components
 import VipLevelCard, {IRules} from './_components/VipLevelCard';
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 
 
@@ -61,22 +62,28 @@ const VipLevelCarousel = ({}) => {
     return <VipLevelCardListRoot>
         <GridThemeProvider gridTheme={gridConfig}>
         {renderControlArea}
-        <BearCarousel
-            controllerRef={controllerRef}
-            isEnableLoop={false}
-            isCenteredSlides
-            isEnableNavButton
-            slidesPerView={1}
-            spaceBetween={20}
-            staticHeight="270px"
-            data={carouselData}
-            isSlideItemMemo
-            breakpoints={{
-                576: {
-                    slidesPerView: 'auto'
-                },
-            }}
-        />
+
+            <BrowserOnly>
+                {() => {
+                    return <BearCarousel
+                        controllerRef={controllerRef}
+                        isEnableLoop={false}
+                        isCenteredSlides
+                        isEnableNavButton
+                        slidesPerView={1}
+                        spaceBetween={20}
+                        staticHeight="270px"
+                        data={carouselData}
+                        isSlideItemMemo
+                        breakpoints={{
+                            576: {
+                                slidesPerView: 'auto'
+                            },
+                        }}
+                    />
+                }}
+            </BrowserOnly>
+
         </GridThemeProvider>
     </VipLevelCardListRoot>;
 

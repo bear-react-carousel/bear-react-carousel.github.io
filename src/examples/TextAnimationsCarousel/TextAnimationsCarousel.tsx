@@ -6,6 +6,7 @@ import {foodImages} from './data';
 import gridConfig from '@site/src/config/grid';
 import TextCard, {AnimationsBox} from './_components/TextCard';
 import 'bear-react-grid/dist/index.css';
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 interface IProps {
     isLoadData: boolean,
@@ -28,31 +29,37 @@ const TextAnimationsCarousel = ({
 
     return <TextAnimationsRoot>
         <GridThemeProvider gridTheme={gridConfig}>
-            <BearCarousel
-                data={isLoadData ? slideItemData: []}
-                slidesPerView={1}
-                staticHeight="400px"
-                // isEnableAutoPlay
-                isEnableLoop
-                isEnableNavButton={false}
-                isEnablePagination
-                autoPlayTime={5000}
-                moveTime={900}
-                breakpoints={{
-                    576: {
-                        staticHeight: '400px',
-                        isEnableNavButton: false,
-                    },
-                    996: {
-                        staticHeight: '500px',
-                        isEnableNavButton: true,
-                    },
-                    1200: {
-                        staticHeight: '600px',
-                        isEnableNavButton: true,
-                    }
+            <BrowserOnly>
+                {() => {
+                    return <BearCarousel
+                        data={isLoadData ? slideItemData: []}
+                        slidesPerView={1}
+                        staticHeight="400px"
+                        // isEnableAutoPlay
+                        isEnableLoop
+                        isEnableNavButton={false}
+                        isEnablePagination
+                        autoPlayTime={5000}
+                        moveTime={900}
+                        breakpoints={{
+                            576: {
+                                staticHeight: '400px',
+                                isEnableNavButton: false,
+                            },
+                            996: {
+                                staticHeight: '500px',
+                                isEnableNavButton: true,
+                            },
+                            1200: {
+                                staticHeight: '600px',
+                                isEnableNavButton: true,
+                            }
+                        }}
+                    />
                 }}
-            />
+            </BrowserOnly>
+
+
         </GridThemeProvider>
     </TextAnimationsRoot>;
 };

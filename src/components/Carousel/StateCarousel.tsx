@@ -1,6 +1,7 @@
 import * as React from 'react';
 import BearCarousel, {BearSlideItem} from 'bear-react-carousel';
 import {images} from "./data";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 
 const StateCarousel = () => {
@@ -17,13 +18,17 @@ const StateCarousel = () => {
         };
     }), [activeId]);
 
-    return <BearCarousel
-        data={myData}
-        slidesPerView={3}
-        isEnableNavButton
-        aspectRatio={{ widthRatio: 16, heightRatio: 9 }}
-        isSlideItemMemo
-    />
+    return <BrowserOnly>
+        {() => {
+            return <BearCarousel
+                data={myData}
+                slidesPerView={3}
+                isEnableNavButton
+                aspectRatio={{ widthRatio: 16, heightRatio: 9 }}
+                isSlideItemMemo
+            />
+        }}
+    </BrowserOnly>
 }
 
 
