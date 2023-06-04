@@ -31,6 +31,13 @@
 
 
 
+
+.navbar__logo img {
+  height: 100%;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
 .header-github-link:hover {
   opacity: 0.6;
 }
@@ -49,7 +56,9 @@
   no-repeat;
 }
 
-
+.menu__link:not(.menu__link--active){
+  color: rgba(235, 235, 245, 0.6);
+}
 .navbar__link, .menu__link{
   font-size: 14px;
 }
