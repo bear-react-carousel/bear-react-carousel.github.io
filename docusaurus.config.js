@@ -73,11 +73,13 @@ const config = {
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
-            position: 'right',
+            position: 'left',
             label: 'Guide',
           },
-          {to: '/example', label: 'Example', position: 'right'},
-          {to: '/props-try', label: 'Props Try', position: 'right'},
+          {to: '/docs/getting-started', label: 'Started', position: 'right'},
+          {to: '/docs/props-try', label: 'Props Try', position: 'right'},
+          {to: '/docs/feature/height', label: 'Feature', position: 'right'},
+          {to: '/docs/category/examples', label: 'Examples', position: 'right'},
           // {to: '/blog', label: 'Blog', position: 'right'},
           {
             href: 'https://github.com/imagine10255/bear-react-carousel',
