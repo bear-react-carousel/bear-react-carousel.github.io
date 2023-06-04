@@ -1,7 +1,7 @@
-import React, {ReactNodeArray, useCallback, useEffect, useState} from 'react';
+import React, {ReactNodeArray, useCallback, useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 import {Col, Row} from 'bear-react-grid';
-import Carousel, {IBearCarouselObj, TBearSlideItemDataList, BearSlideItem} from 'bear-react-carousel';
+import Carousel, {IBearCarouselObj, TBearSlideItemDataList, BearSlideItem, IInfo} from 'bear-react-carousel';
 import {anyToNumber} from 'bear-jsutils/convert';
 import cx from 'classnames';
 import {GridThemeProvider} from "bear-react-grid";
@@ -68,8 +68,9 @@ const PropsTryCarousel = ({
     isLoadData
 }: IProps) => {
     const prefixStorage = getStorage();
+    const controllerRef = useRef<Controller>(null);
+    const [info, setInfo] = useState<IInfo>();
 
-    const [carousel, setCarousel] = useState<IBearCarouselObj>();
     const [isExpend, toggleExpend] = useState<boolean>(prefixStorage?.isExpend ?? true);
     const {control, watch, setValue, getValues} = useForm<IFormData>({
         defaultValues: {
@@ -116,17 +117,15 @@ const PropsTryCarousel = ({
     const moveTime = watch('moveTime');
 
 
-    console.log('isDebug',isDebug);
 
     const handleGoPage = (index: number): void => {
-        carousel?.goToPage(index);
+        controllerRef.current?.slideToActualIndex(index);
     };
 
     const getPageTotal = (): number => {
-        return carousel?.info.pageTotal?? 0;
+        return info?.page.pageTotal?? 0;
     };
 
-    const handleSetCarousel = useCallback(setCarousel, []);
 
 
     useEffect(() => {
@@ -152,6 +151,7 @@ const PropsTryCarousel = ({
      * render Pagination control
      */
     const renderPaginationControl = () => {
+
         const pageTotal = getPageTotal();
         let pageEls: ReactNodeArray = [];
 
@@ -166,21 +166,21 @@ const PropsTryCarousel = ({
         }
 
 
-        return <PageControlBox>
+        return <PagesBox>
             {pageEls}
 
-            <div className="flex-grow-1 justify-content-end d-flex">
-                <Button
-                    color="info"
-                    onClick={() => toggleExpend(prev => !prev)}
-                    className="m-1"
-                >
-                    {isExpend ? 'hide':'expend'}
-                </Button>
-            </div>
+            {/*<div className="flex-grow-1 justify-content-end d-flex">*/}
+            {/*    <Button*/}
+            {/*        color="info"*/}
+            {/*        onClick={() => toggleExpend(prev => !prev)}*/}
+            {/*        className="m-1"*/}
+            {/*    >*/}
+            {/*        {isExpend ? 'hide':'expend'}*/}
+            {/*    </Button>*/}
+            {/*</div>*/}
 
 
-        </PageControlBox>;
+        </PagesBox>;
     };
 
 
@@ -361,8 +361,10 @@ const PropsTryCarousel = ({
 
 
     const renderCarousel = () => {
-        console.log('===isDebug',isDebug);
         return <Carousel
+            controllerRef={controllerRef}
+            onChange={setInfo}
+
             // setCarousel={handleSetCarousel}
             data={SlideItemData}
             isDebug={isDebug}
@@ -511,24 +513,21 @@ const PropsTryCarousel = ({
 
     return <GridThemeProvider gridTheme={gridConfig}>
         <Row className="mb-1">
-            <Col xl={24} >
-                <Row>
-                    <Col col={24} className="mb-4">
-                        {isMount && (<>
+            {isMount && (
+                <Col xl={24} >
+                    <Row>
+                        <Col col={24} className="mb-4">
                             {renderCarousel()}
-                        </>)}
+                        </Col>
+                        <Col col={24}>
+                            {renderPaginationControl()}
 
-                    </Col>
-                    <Col col={24}>
-                        {renderPaginationControl()}
+                        </Col>
+                    </Row>
+                </Col>
+            )}
 
-                    </Col>
-                </Row>
-
-
-            </Col>
-
-            <Col lg={24} xl={12} className={cx( {'d-none': !isExpend})}>
+            <Col lg={24} xl={24} className={cx( {'d-none': !isExpend})}>
 
                 {renderPageControl()}
 
@@ -537,7 +536,11 @@ const PropsTryCarousel = ({
 
 
             <Col lg={24} xl className="mb-4">
-                <TextAreaField id="console"/>
+                <pre>
+                    {JSON.stringify(info, null, '\t')}
+                </pre>
+
+            {/*    <TextAreaField id="console"/>*/}
             </Col>
 
         </Row>
@@ -553,6 +556,16 @@ export default PropsTryCarousel;
 const PageControlBox = styled.div`
   padding: 8px;
   border: 1px dotted #00a3e0;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff;
+  margin-bottom: 20px;
+`;
+
+
+const PagesBox = styled.div`
+  padding: 8px;
   width: auto;
   display: flex;
   flex-wrap: wrap;
