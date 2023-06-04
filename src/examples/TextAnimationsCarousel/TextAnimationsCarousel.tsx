@@ -4,7 +4,7 @@ import BearCarousel, {elClassName, TBearSlideItemDataList} from 'bear-react-caro
 import styled, {ThemeProvider} from 'styled-components';
 import {foodImages} from './data';
 import gridConfig from '@site/src/config/grid';
-import TextCard, {AnimationsBox} from './TextCard';
+import TextCard, {AnimationsBox} from './_components/TextCard';
 import 'bear-react-grid/dist/index.css';
 
 interface IProps {
