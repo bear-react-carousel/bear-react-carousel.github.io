@@ -15,18 +15,25 @@
     "typecheck": "tsc"
   },
   "resolutions": {
+    "@bearests/core": "0.0.5",
     "styled-components": "5.3.9"
   },
   "dependencies": {
+    "@bearests/atom": "^0.0.9",
+    "@bearests/form": "^0.0.29",
+    "@bearests/organize": "^0.0.6",
     "@docusaurus/core": "2.4.1",
     "@docusaurus/preset-classic": "2.4.1",
     "@mdx-js/react": "^1.6.22",
-    "bear-react-carousel": "^4.0.1-alpha.2",
+    "bear-jsutils": "^3.1.0",
+    "bear-react-carousel": "^4.0.1-alpha.4",
     "bear-react-grid": "^3.0.3",
+    "classnames": "^2.3.2",
     "clsx": "^1.2.1",
     "prism-react-renderer": "^1.3.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "7.39.1",
     "styled-components": "5.3.9"
   },
   "devDependencies": {
