@@ -21,6 +21,8 @@ const config = {
   organizationName: 'bear-react-carousel', // Usually your GitHub org/user name.
   projectName: 'bear-react-carousel.github.io', // Usually your repo name.
 
+  trailingSlash: false,
+
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
