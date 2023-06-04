@@ -2,6 +2,7 @@
 sidebar_position: 7
 ---
 
+import Carousel from '@site/src/components/Carousel/BreakpointsCarousel';
 
 
 # Responsive
@@ -13,14 +14,32 @@ Note that the setting here is from small to large, using the override setting me
 
 If you need to use different display methods in different sizes, you can try this
 
-```tsx
+```jsx
 <BearCarousel 
     // ...ignore some 
     slidesPerView={1}
+    aspectRatio={{widthRatio: 22, heightRatio: 9}}
     isEnablePagination
     isEnableLoop
+    breakpoints={{
+        768: {
+            slidesPerView: 2,
+            aspectRatio: {widthRatio: 16, heightRatio: 9},
+            isEnableLoop: false,
+            isEnablePagination: false,
+            isEnableNavButton: false,
+        },
+        1200: {
+            slidesPerView: 4,
+            aspectRatio: {widthRatio: 32, heightRatio: 9},
+            isEnableLoop: true,
+            isEnablePagination: true,
+            isEnableNavButton: true,
+        }
+    }}
 />
 ```
 
 You can move the window to see
 
+<Carousel/>
