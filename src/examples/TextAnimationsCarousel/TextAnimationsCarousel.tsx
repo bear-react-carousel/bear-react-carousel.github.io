@@ -86,7 +86,7 @@ const TextAnimationsRoot = styled.div`
       
       &:before{
         content: "";
-        background: url(${require('@site/static/img/food/blackt-will.png')}) center center repeat;
+        background: url(${require('@site/static/img/food/blackt-will.png').default}) center center repeat;
         z-index: 0;
         position: absolute;
         top: 0;

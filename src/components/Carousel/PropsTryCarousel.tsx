@@ -15,6 +15,7 @@ import {Button} from '@bearests/atom';
 import {images} from './data';
 import {isNotEmpty} from 'bear-jsutils/equal';
 import {decodeToJson} from 'bear-jsutils/string';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 
 const SlideItemData: TBearSlideItemDataList = images.map(row => {
@@ -67,11 +68,11 @@ interface IProps {
 const PropsTryCarousel = ({
     isLoadData
 }: IProps) => {
-    const prefixStorage = getStorage();
+    // const prefixStorage = getStorage();
     const controllerRef = useRef<Controller>(null);
     const [info, setInfo] = useState<IInfo>();
 
-    const [isExpend, toggleExpend] = useState<boolean>(prefixStorage?.isExpend ?? true);
+    const [isExpend, toggleExpend] = useState<boolean>(true);
     const {control, watch, setValue, getValues} = useForm<IFormData>({
         defaultValues: {
             moveTime: 400,
@@ -137,13 +138,13 @@ const PropsTryCarousel = ({
     /**
      * 同步設定持久化
      */
-    useEffect(() => {
-        const formData = getValues();
-        localStorage.setItem(STORAGE_KEY,JSON.stringify({
-            ...formData,
-            isExpend,
-        }));
-    });
+    // useEffect(() => {
+    //     const formData = getValues();
+    //     localStorage.setItem(STORAGE_KEY,JSON.stringify({
+    //         ...formData,
+    //         isExpend,
+    //     }));
+    // }, []);
 
 
 
@@ -511,40 +512,44 @@ const PropsTryCarousel = ({
     };
 
 
-    return <GridThemeProvider gridTheme={gridConfig}>
-        <Row className="mb-1">
-            {isMount && (
-                <Col xl={24} >
-                    <Row>
-                        <Col col={24} className="mb-4">
-                            {renderCarousel()}
+    return <BrowserOnly>
+        {() => {
+            return <GridThemeProvider gridTheme={gridConfig}>
+                <Row className="mb-1">
+                    {isMount && (
+                        <Col xl={24} >
+                            <Row>
+                                <Col col={24} className="mb-4">
+                                    {renderCarousel()}
+                                </Col>
+                                <Col col={24}>
+                                    {renderPaginationControl()}
+
+                                </Col>
+                            </Row>
                         </Col>
-                        <Col col={24}>
-                            {renderPaginationControl()}
+                    )}
 
-                        </Col>
-                    </Row>
-                </Col>
-            )}
+                    <Col lg={24} xl={24} className={cx( {'d-none': !isExpend})}>
 
-            <Col lg={24} xl={24} className={cx( {'d-none': !isExpend})}>
+                        {renderPageControl()}
 
-                {renderPageControl()}
-
-                {renderSettingControl()}
-            </Col>
+                        {renderSettingControl()}
+                    </Col>
 
 
-            <Col lg={24} xl className="mb-4">
+                    <Col lg={24} xl className="mb-4">
                 <pre>
                     {JSON.stringify(info, null, '\t')}
                 </pre>
 
-            {/*    <TextAreaField id="console"/>*/}
-            </Col>
+                        {/*    <TextAreaField id="console"/>*/}
+                    </Col>
 
-        </Row>
-    </GridThemeProvider>;
+                </Row>
+            </GridThemeProvider>
+        }}
+    </BrowserOnly>;
 
 };
 
