@@ -1,5 +1,5 @@
 import * as React from 'react';
-import BearCarousel, {BearSlideItem} from 'bear-react-carousel';
+import BearCarousel, {BearSlideImage} from 'bear-react-carousel';
 import {images} from "./data";
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
@@ -10,11 +10,11 @@ const StateCarousel = () => {
         const isActive = row.id === activeId;
         return {
             key: row.id,
-            children: <BearSlideItem as="image"
+            children: <BearSlideImage
                      imageUrl={row.image} onClick={() => setActiveId(row.id)}
                      style={isActive ? {transition: 'filter .4s', filter: 'blur(4px)'}: undefined}
             >
-            </BearSlideItem>
+            </BearSlideImage>
         };
     }), [activeId]);
 

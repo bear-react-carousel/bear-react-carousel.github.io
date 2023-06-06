@@ -1,4 +1,4 @@
-import {BearSlideItem} from "bear-react-carousel";
+import {BearSlideCard} from "bear-react-carousel";
 import {EDirection, Flex, media} from "bear-react-grid";
 import React from "react";
 import styled, {css} from 'styled-components';
@@ -19,7 +19,7 @@ const TextCard = ({
   position = 'left',
 }: ITextCardProps) => {
 
-    return <BearSlideItem imageUrl={imageUrl}>
+    return <BearSlideCard bgUrl={imageUrl}>
         <AnimationsBox position={position}>
             <SubTitle>{subTitle}</SubTitle>
             <Title>{title}</Title>
@@ -30,7 +30,7 @@ const TextCard = ({
             </Flex>
         </AnimationsBox>
 
-    </BearSlideItem>;
+    </BearSlideCard>;
 };
 
 

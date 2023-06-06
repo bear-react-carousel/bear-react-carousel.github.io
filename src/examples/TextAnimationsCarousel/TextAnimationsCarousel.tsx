@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import {GridThemeProvider} from "bear-react-grid";
 import BearCarousel, {elClassName, TBearSlideItemDataList} from 'bear-react-carousel';
-import styled, {ThemeProvider} from 'styled-components';
+import styled from 'styled-components';
 import {foodImages} from './data';
 import gridConfig from '@site/src/config/grid';
 import TextCard, {AnimationsBox} from './_components/TextCard';
-import 'bear-react-grid/dist/index.css';
 import BrowserOnly from "@docusaurus/BrowserOnly";
+import 'bear-react-grid/dist/index.css';
 
 interface IProps {
     isLoadData: boolean,

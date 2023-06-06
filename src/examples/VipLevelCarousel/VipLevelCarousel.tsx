@@ -2,7 +2,7 @@ import React, {useMemo, useRef, useState} from 'react';
 import styled from 'styled-components';
 import gridConfig from "@site/src/config/grid";
 import {ERowAlign, Flex, media, GridThemeProvider} from 'bear-react-grid';
-import BearCarousel, {elClassName, BearSlideItem, TBearSlideItemDataList, Controller} from 'bear-react-carousel';
+import BearCarousel, {elClassName, BearSlideCard, TBearSlideItemDataList, Controller} from 'bear-react-carousel';
 import {vipData, levelOption} from './data';
 
 // Components
@@ -24,14 +24,14 @@ const VipLevelCarousel = ({}) => {
         return vipData.map(row => {
             return {
                 key: row.level,
-                children: (<BearSlideItem as="card" className="py-4">
+                children: (<BearSlideCard className="py-4">
                     <VipLevelCard
                         rules={row.rule}
                         levelName={`LV ${row.level}`}
                         totalAmount={row.totalAmount}
                         isActive={currentLv === Number(row.level)}
                     />
-                </BearSlideItem>)
+                </BearSlideCard>)
             };
         });
 

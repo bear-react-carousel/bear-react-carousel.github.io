@@ -2756,10 +2756,10 @@ bear-jsutils@^3.1.0:
   resolved "https://registry.yarnpkg.com/bear-jsutils/-/bear-jsutils-3.1.0.tgz#aff940ed2896cde07b263a1f652c58dceb7b28dc"
   integrity sha512-inSK3wgOFEhzH1mEra1bvd6wWlLtvzhK7/7ESSU8fo0Nm4QqXYfxp2uBKIl/NYQN5fUb2G3Jnt4CHjM7X0+eMA==
 
-bear-react-carousel@^4.0.1-alpha.11:
-  version "4.0.1-alpha.11"
-  resolved "https://registry.yarnpkg.com/bear-react-carousel/-/bear-react-carousel-4.0.1-alpha.11.tgz#932b9562935c83310ece474ff09a4003fe5a70f1"
-  integrity sha512-Tz+81LNQO5834tY/FmXMXYH1PZXWeQUrJ5AuScrg6ML+snGjwLgzQ095fpHLCpij8VNiAKHQTHaC0eH+LJ4PJQ==
+bear-react-carousel@^4.0.1-alpha.13:
+  version "4.0.1-alpha.13"
+  resolved "https://registry.yarnpkg.com/bear-react-carousel/-/bear-react-carousel-4.0.1-alpha.13.tgz#040ac6f392c6c47f43830b2703337e7037dbbef0"
+  integrity sha512-sFn8Kopp7cEWqjt/KaLUT6DjURG1y5xuP0Jh1F3yBU2/036RcSut3dD7morouEEW8l7MOPaH4egJUPUlMIvHbQ==
   dependencies:
     "@bearests/core" "^0.0.5"
     "@bearests/form" "^0.0.29"

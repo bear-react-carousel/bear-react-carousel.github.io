@@ -1,7 +1,7 @@
 import React, {ReactNodeArray, useCallback, useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 import {Col, Row} from 'bear-react-grid';
-import Carousel, {IBearCarouselObj, TBearSlideItemDataList, BearSlideItem, IInfo} from 'bear-react-carousel';
+import Carousel, {IBearCarouselObj, TBearSlideItemDataList, BearSlideCard, IInfo} from 'bear-react-carousel';
 import {anyToNumber} from 'bear-jsutils/convert';
 import cx from 'classnames';
 import {GridThemeProvider} from "bear-react-grid";
@@ -21,7 +21,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 const SlideItemData: TBearSlideItemDataList = images.map(row => {
     return {
         key: row.id,
-        children: <BearSlideItem imageUrl={row.image} imageSize="cover"/>
+        children: <BearSlideCard bgUrl={row.image} bgSize="cover"/>
     };
 });
 

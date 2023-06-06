@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {css, keyframes} from 'styled-components';
-import BearCarousel, {elClassName, TBearSlideItemDataList, BearSlideItem} from 'bear-react-carousel';
+import BearCarousel, {elClassName, TBearSlideItemDataList, BearSlideCard, BearSlideImage} from 'bear-react-carousel';
 import gridConfig from "@site/src/config/grid";
 import {GridThemeProvider, media} from "bear-react-grid";
 import BrowserOnly from '@docusaurus/BrowserOnly';
@@ -11,7 +11,7 @@ import {foodImages} from "@site/src/examples/TextAnimationsCarousel/data";
 const bearSlideItemData: TBearSlideItemDataList = foodImages.map(row => {
     return {
         key: row.id,
-        children: <BearSlideItem imageUrl={row.imageUrl}/>
+        children: <BearSlideImage imageUrl={row.imageUrl}/>
     };
 });
 const autoPlayTime = 5000;

@@ -1,4 +1,4 @@
-import {BearSlideItem} from "bear-react-carousel";
+import {BearSlideCard, BearSlideImage} from "bear-react-carousel";
 import * as React from "react";
 
 export const images = [
@@ -12,13 +12,13 @@ export const images = [
 export const divData = images.map(row => {
     return {
         key: row.id,
-        children: <BearSlideItem as="card" imageUrl={row.image}/>
+        children: <BearSlideCard bgUrl={row.image}/>
     };
 });
 export const imageData = images.map(row => {
     return {
         key: row.id,
-        children: <BearSlideItem as="image" imageUrl={row.image}/>
+        children: <BearSlideImage imageUrl={row.image}/>
     };
 });
 
@@ -36,8 +36,8 @@ const numberColors = [
 export const colorData = numberColors.map(row => {
     return {
         key: row.id,
-        children: <BearSlideItem>
+        children: <BearSlideCard>
             <div style={{height: '100%', backgroundColor: row.color}}/>
-        </BearSlideItem>
+        </BearSlideCard>
     };
 });
