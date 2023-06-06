@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {GridThemeProvider} from "bear-react-grid";
 import BearCarousel, {elClassName, TBearSlideItemDataList} from 'bear-react-carousel';
 import styled, {ThemeProvider} from 'styled-components';

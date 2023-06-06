@@ -1,19 +1,17 @@
 import React from 'react';
 import styled, {css, keyframes} from 'styled-components';
 import BearCarousel, {elClassName, TBearSlideItemDataList, BearSlideItem} from 'bear-react-carousel';
-import {media} from 'bear-react-grid';
-import {images} from '../../components/Carousel/data';
 import gridConfig from "@site/src/config/grid";
-import {GridThemeProvider} from "bear-react-grid";
+import {GridThemeProvider, media} from "bear-react-grid";
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import {foodImages} from "@site/src/examples/TextAnimationsCarousel/data";
 
 
 // 輪播項目
-const bearSlideItemData: TBearSlideItemDataList = images.map(row => {
+const bearSlideItemData: TBearSlideItemDataList = foodImages.map(row => {
     return {
         key: row.id,
-        paginationContent: <>test</>,
-        children: <BearSlideItem imageUrl={row.image}/>
+        children: <BearSlideItem imageUrl={row.imageUrl}/>
     };
 });
 const autoPlayTime = 5000;
@@ -37,7 +35,12 @@ const AutoPlayProgressCarousel = ({
             <BrowserOnly>
                 {() => {
                     return <BearCarousel
-                        data={isLoadData ? bearSlideItemData: []}
+                        data={isLoadData ? bearSlideItemData: undefined}
+                        renderPagination={(pageTotal: number) => {
+                            return foodImages.map(row => {
+                                return <CustomPage>{row.title}</CustomPage>;
+                            });
+                        }}
                         slidesPerView={1}
                         slidesPerGroup={1}
                         isEnablePagination
@@ -72,21 +75,32 @@ const progress = keyframes`
 `;
 
 
+const CustomPage = styled.div`
+    padding: 10px 20px;
+`;
+
+
 const CarouselBox = styled.div`
-    
     .${elClassName.paginationContent}{
-        display: none;
+        background-color: rgba(255, 255, 255, .8);
+      
+      ${media.xl`
+           display: flex;
+      `}
     }
 
     .${elClassName.paginationGroup}{
         bottom: 0;
+        width: 100%;
+        color: #000;
+        overflow: hidden;
     }
     .${elClassName.paginationButton}{
         &:after {
             content: '';
             width: 0;
             height: 4px;
-            background-color: ${props => props.theme.primaryColor};
+            background-color: greenyellow;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -141,4 +155,5 @@ const CarouselBox = styled.div`
     `}   
     
 `;
+
 
