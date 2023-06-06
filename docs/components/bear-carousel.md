@@ -8,7 +8,6 @@ If you want to do some customization
 ```tsx
 import BearCarousel from 'bear-react-carousel';
 
-
 <BearCarousel
     // ...ignore some 
     staticHeight="250px"
@@ -56,20 +55,21 @@ import BearCarousel from 'bear-react-carousel';
 | onClick                | () => void                      |          |         | Slide item click event                            |
 
 
-### IRenderNavButton
+### TRenderNavButton
 
-```
-(toPrev: () => void, toNext: () => void) => void
+```tsx
+type TRenderNavButton = (toPrev: () => void, toNext: () => void) => void
 ```
 
-### IRenderPagination
-```
-(pageTotal: number) => JSX.Element[]
+### TRenderPagination
+
+```tsx
+type TRenderPagination = (pageTotal: number) => JSX.Element[]
 ```
 
 ### IPropsBreakpoints
 
-```
+```tsx
 interface IPropsBreakpoints {
   [key: number]: Partial<IBreakpointSetting>
 }
@@ -90,10 +90,10 @@ interface IBreakpointSetting {
 }
 ```
 
-### IStateOnChange
+### TStateOnChange
 
-```
-(carouselState: ICarouselState) => void
+```tsx
+type TStateOnChange = (carouselState: ICarouselState) => void
 
 interface ICarouselState {
   element: {
