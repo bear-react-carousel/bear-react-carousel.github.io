@@ -39,7 +39,7 @@ import 'bear-react-carousel/dist/index.css';
 Then use code
 
 ```tsx
-import BearCarousel, {TBearSlideItemDataList, BearSlideItem} from 'bear-react-carousel';
+import BearCarousel, {TBearSlideItemDataList, BearSlideCard} from 'bear-react-carousel';
 
 const images = [
     {id: 1, color: 'green'},
@@ -56,9 +56,9 @@ export const CustomBanner = () => {
     const bearSlideItemData: TBearSlideItemDataList = images.map(row => {
         return {
             key: row.id,
-            children: <BearSlideItem>
+            children: <BearSlideCard>
                 <div style={{height: '100%', backgroundColor: row.color}}/>
-            </BearSlideItem>
+            </BearSlideCard>
         };
     });
     return <BearCarousel
