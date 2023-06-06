@@ -29,9 +29,8 @@ const AutoPlayProgressCarousel = ({
     isLoadData = true
 }: IProps) => {
 
-
-    return <CarouselBox className="mb-4 mb-lg-5">
-        <GridThemeProvider gridTheme={gridConfig}>
+    return <GridThemeProvider gridTheme={gridConfig}>
+            <CarouselBox className="mb-4 mb-lg-5">
             <BrowserOnly>
                 {() => {
                     return <BearCarousel
@@ -50,15 +49,16 @@ const AutoPlayProgressCarousel = ({
                         isEnableAutoPlay
                         aspectRatio={{widthRatio: 16, heightRatio: 9}}
                         breakpoints={{
-                            1200: {
+                            576: {
+                                isEnablePageContent: true,
                                 aspectRatio: {widthRatio: 32, heightRatio: 9}
                             }
                         }}
                     />
                 }}
             </BrowserOnly>
-        </GridThemeProvider>
-    </CarouselBox>;
+            </CarouselBox>
+        </GridThemeProvider>;
 };
 
 export default AutoPlayProgressCarousel;
@@ -83,43 +83,36 @@ const CustomPage = styled.div`
 const CarouselBox = styled.div`
     .${elClassName.paginationContent}{
         background-color: rgba(255, 255, 255, .8);
-      
-      ${media.xl`
-           display: flex;
-      `}
     }
-
-    .${elClassName.paginationGroup}{
-        bottom: 0;
-        width: 100%;
-        color: #000;
-        overflow: hidden;
-    }
-    .${elClassName.paginationButton}{
-        &:after {
-            content: '';
-            width: 0;
-            height: 4px;
-            background-color: greenyellow;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
-
-        &[data-active=true]:after {
-            animation: ${progress} ${autoPlayTime}ms linear infinite;
-            animation-iteration-count: 1;
-        }
-    }
-
-    
-    
 
     ${props => css`
+      
+       ${media.sm`
+           .${elClassName.paginationGroup}{
+                bottom: 0;
+                width: 100%;
+                color: #000;
+                overflow: hidden;
+            }
+            .${elClassName.paginationButton}{
+                &:after {
+                    content: '';
+                    width: 0;
+                    height: 4px;
+                    background-color: greenyellow;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+        
+                &[data-active=true]:after {
+                    animation: ${progress} ${autoPlayTime}ms linear infinite;
+                    animation-iteration-count: 1;
+                }
+            }
+       `}
        ${media.xl`
             .${elClassName.paginationGroup}{
-                left: 0;
-                right: 0;
                 bottom: -35px;
                 background-color: #fff;
                 height: 70px;
@@ -148,9 +141,6 @@ const CarouselBox = styled.div`
     
             }
     
-            .${elClassName.paginationContent}{
-                display: flex;
-            }
         `}
     `}   
     
