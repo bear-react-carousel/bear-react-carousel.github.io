@@ -82,3 +82,46 @@ const data = infos.map(row => {
 ```
 
 If you need a reference case, you can get it from [auto-play-progress](/docs/examples/auto-play-progress)
+
+
+## Height
+This attribute should be one of the two, so I merged it into the same attribute
+
+```
+staticHeight -> height
+aspectRatio -> height
+```
+
+### Static Height
+
+```tsx
+<BearCarousel
+    data={data}
+    staticHeight="200px"
+/>
+```
+
+change to 
+```tsx
+<BearCarousel
+    data={data}
+    height="200px"
+/>
+```
+
+### AspectRatio
+
+```tsx
+<BearCarousel
+    data={data}
+    aspectRatio={{widthRatio: 32, heightRatio: 9}}
+/>
+```
+
+change to
+```tsx
+<BearCarousel
+    data={data}
+    height={{widthRatio: 32, heightRatio: 9}}
+/>
+```
