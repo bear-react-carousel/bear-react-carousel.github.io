@@ -10,23 +10,28 @@ import SyncCarousel from '@site/src/components/Carousel/SyncCarousel';
 Synchronous control navigation items, currently ***only supports one-way synchronization***
 
 ```tsx
+import BearCarousel from "bear-react-carousel";
+
 const SyncCarousel = () => {
-    const syncCarouselRef = React.useRef<BearCarousel>(null);
+    const syncCarouselRefA = React.useRef<BearCarousel>(null);
+    const syncCarouselRefB = React.useRef<BearCarousel>(null);
 
     return <div>
         <BearCarousel
             // ...ignore some
-            ref={syncCarouselRef}
+             ref={syncCarouselRefA}
+             syncCarouselRef={syncCarouselRefB}
         />
         <BearCarousel
             // ...ignore some
-            syncCarouselRef={syncCarouselRef}
+            ref={syncCarouselRefB}
+            syncCarouselRef={syncCarouselRefA}
         />
     </div>
 }
 ```
 
-Try click slideItem
+Try slide item A or B
 
 <SyncCarousel/>
 
