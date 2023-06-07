@@ -37,7 +37,7 @@ const AutoPlayProgressCarousel = ({
                         data={isLoadData ? bearSlideItemData: undefined}
                         renderPagination={(pageTotal: number) => {
                             return foodImages.map(row => {
-                                return <CustomPage>{row.title}</CustomPage>;
+                                return <CustomPage key={row.id}>{row.title}</CustomPage>;
                             });
                         }}
                         slidesPerView={1}

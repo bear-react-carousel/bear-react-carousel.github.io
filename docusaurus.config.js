@@ -87,7 +87,7 @@ const config = {
           {to: '/docs/props-try', label: 'Props Try', position: 'right'},
           {to: '/docs/category/feature', label: 'Feature', position: 'right'},
           {to: '/docs/category/examples', label: 'Examples', position: 'right'},
-          // {to: '/blog', label: 'Blog', position: 'right'},
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/imagine10255/bear-react-carousel',
             position: 'right',
@@ -105,23 +105,6 @@ const config = {
         //       {
         //         label: 'Tutorial',
         //         to: '/docs/intro',
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: 'Community',
-        //     items: [
-        //       {
-        //         label: 'Stack Overflow',
-        //         href: 'https://stackoverflow.com/questions/tagged/bear-react-carousel',
-        //       },
-        //       {
-        //         label: 'Blog',
-        //         to: '/blog',
-        //       },
-        //       {
-        //         label: 'GitHub',
-        //         href: 'https://github.com/facebook/docusaurus',
         //       },
         //     ],
         //   },
