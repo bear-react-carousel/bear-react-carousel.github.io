@@ -28,7 +28,7 @@ non-js secondary development package into React, and only include the features y
 - Navigation buttons can be directly moved out of the carousel area without being affected by overflow in simple usage situations
 - Prevent onClick of carousel item from triggering on swipe
 - Provide project scale setting + additional fixed size or fixed height setting
-- Support one-way synchronous control of the second Carousel
+- Support two-way synchronous control of the second Carousel
 - Support center mode
 - Support carousel auto display items
 - Support auto play
