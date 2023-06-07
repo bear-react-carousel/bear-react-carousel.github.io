@@ -47,11 +47,11 @@ const AutoPlayProgressCarousel = ({
                         isEnableLoop
                         autoPlayTime={autoPlayTime}
                         isEnableAutoPlay
-                        aspectRatio={{widthRatio: 16, heightRatio: 9}}
+                        height={{widthRatio: 16, heightRatio: 9}}
                         breakpoints={{
                             576: {
                                 isEnablePageContent: true,
-                                aspectRatio: {widthRatio: 32, heightRatio: 9}
+                                height: {widthRatio: 32, heightRatio: 9}
                             }
                         }}
                     />

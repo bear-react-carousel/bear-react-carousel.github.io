@@ -362,6 +362,12 @@ const PropsTryCarousel = ({
 
 
     const renderCarousel = () => {
+
+        let height: string|{widthRatio: number, heightRatio: number, addStaticHeight: string} = isStaticHeightMode && isNotEmpty(staticHeight) ? `${staticHeight}px` : undefined
+        if(!height){
+            height = !isStaticHeightMode && aspectRatioWidth > 0 && aspectRatioHeight > 0 ? {widthRatio: aspectRatioWidth, heightRatio: aspectRatioHeight, addStaticHeight: addStaticHeight}: undefined
+        }
+
         return <Carousel
             controllerRef={controllerRef}
             onChange={setInfo}
@@ -379,8 +385,7 @@ const PropsTryCarousel = ({
             spaceBetween={anyToNumber(spaceBetween)}
             autoPlayTime={anyToNumber(autoPlayTime)}
             moveTime={anyToNumber(moveTime)}
-            aspectRatio={!isStaticHeightMode && aspectRatioWidth > 0 && aspectRatioHeight > 0 ? {widthRatio: aspectRatioWidth, heightRatio: aspectRatioHeight, addStaticHeight: addStaticHeight}: undefined}
-            staticHeight={isStaticHeightMode && isNotEmpty(staticHeight) ? `${staticHeight}px` : undefined}
+            height={height}
             // breakpoints={{
             //     768: {
             //         slidesPerView: 2,

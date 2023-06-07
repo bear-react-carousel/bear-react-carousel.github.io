@@ -24,7 +24,7 @@ const StateCarousel = () => {
                 data={myData}
                 slidesPerView={3}
                 isEnableNavButton
-                aspectRatio={{ widthRatio: 16, heightRatio: 9 }}
+                height={{ widthRatio: 16, heightRatio: 9 }}
                 isSlideItemMemo
             />
         }}

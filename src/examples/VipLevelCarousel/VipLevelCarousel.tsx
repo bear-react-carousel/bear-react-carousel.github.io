@@ -72,7 +72,7 @@ const VipLevelCarousel = ({}) => {
                         isEnableNavButton
                         slidesPerView={1}
                         spaceBetween={20}
-                        staticHeight="270px"
+                        height="270px"
                         data={carouselData}
                         isSlideItemMemo
                         breakpoints={{

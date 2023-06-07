@@ -19,7 +19,7 @@ You can use your own units **like px, rem, %**
 ```tsx
 <BearCarousel
     // ...ignore some 
-    staticHeight="250px"
+    height="250px"
 />
 ```
 
@@ -32,13 +32,12 @@ If you want to set the height proportionally, you can do
 ```tsx
 <BearCarousel 
     // ...ignore some 
-    aspectRatio={{ widthRatio: 21, heightRatio: 9 }}
+    height={{ widthRatio: 21, heightRatio: 9 }}
 />
 ```
 
 You can move the window to see
 
 <Carousel
-    staticHeight={undefined}
-    aspectRatio={{ widthRatio: 21, heightRatio: 9 }}
+    height={{ widthRatio: 21, heightRatio: 9 }}
 />

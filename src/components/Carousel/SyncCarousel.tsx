@@ -17,7 +17,7 @@ const SyncCarousel = () => {
                     data={divData}
                     slidesPerView={3}
                     isCenteredSlides
-                    staticHeight="200px"
+                    height="200px"
                     isEnableNavButton
                     isEnablePagination
                     isDebug
@@ -29,7 +29,7 @@ const SyncCarousel = () => {
                     data={divData}
                     slidesPerView={1}
                     isCenteredSlides
-                    staticHeight="200px"
+                    height="200px"
                     isEnableNavButton
                     isEnablePagination
                     isDebug

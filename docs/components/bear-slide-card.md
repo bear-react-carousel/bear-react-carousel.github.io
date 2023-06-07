@@ -24,7 +24,7 @@ const data = numberColors.map(row => {
 
 <BearCarousel
     // ...ignore some 
-    staticHeight="250px"
+    height="250px"
     data={data}
 />
 ```

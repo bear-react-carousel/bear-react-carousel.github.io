@@ -11,7 +11,7 @@ const Carousel = (props: IBearCarouselProps) => {
             return <BearCarousel
                 data={divData}
                 isEnableNavButton
-                staticHeight="250px"
+                height="250px"
                 {...props}
             />
         }}
