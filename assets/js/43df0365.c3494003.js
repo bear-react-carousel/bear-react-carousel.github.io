@@ -107,7 +107,7 @@
     ${r.BC.xxl`
         font-size: 30px;
     `}
-`;var h=a(1262);const b=e=>{let{isLoadData:t=!0}=e;const a=m.Q.map((e=>({key:e.id,children:o.createElement(c,e)})));return o.createElement(A,null,o.createElement(r.tC,{gridTheme:p.Z},o.createElement(h.Z,null,(()=>o.createElement(s.ZP,{data:t?a:[],slidesPerView:1,staticHeight:"400px",isEnableLoop:!0,isEnableNavButton:!1,isEnablePagination:!0,autoPlayTime:5e3,moveTime:900,breakpoints:{576:{staticHeight:"400px",isEnableNavButton:!1},996:{staticHeight:"500px",isEnableNavButton:!0},1200:{staticHeight:"600px",isEnableNavButton:!0}}})))))},A=l.ZP.div`
+`;var h=a(1262);const b=e=>{let{isLoadData:t=!0}=e;const a=m.Q.map((e=>({key:e.id,children:o.createElement(c,e)})));return o.createElement(A,null,o.createElement(r.tC,{gridTheme:p.Z},o.createElement(h.Z,null,(()=>o.createElement(s.ZP,{data:t?a:[],slidesPerView:1,height:"400px",isEnableLoop:!0,isEnableNavButton:!1,isEnablePagination:!0,autoPlayTime:5e3,moveTime:900,breakpoints:{576:{height:"400px",isEnableNavButton:!1},996:{height:"500px",isEnableNavButton:!0},1200:{height:"600px",isEnableNavButton:!0}}})))))},A=l.ZP.div`
   --primary-color: #c4a265;
 
   .${s.eb.slideItem}{
