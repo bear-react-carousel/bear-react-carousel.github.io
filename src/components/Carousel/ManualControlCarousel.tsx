@@ -14,7 +14,7 @@ const ManualControlCarousel = () => {
             return <div>
                 <BearCarousel
                     setController={setController}
-                    onChange={setCarouselState}
+                    onSlideChange={setCarouselState}
                     data={divData}
                     slidesPerView={1}
                     isCenteredSlides

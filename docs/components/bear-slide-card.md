@@ -32,11 +32,13 @@ const data = numberColors.map(row => {
 
 ## Props
 
-| PropsName     | Type           | Required | Default | Description                          |
-|-------------- | -------------- | -------- | ------- | -------------------------------------|
-| style         | CSS.Properties |          |         |                                      |
-| className     | string         |          |         |                                      |
-| bgUrl         | string         |          |         | Card background image url            |
-| bgSize        | string         |          |  cover  | Card background image size           |
-| children      | JSX.Element    |          |         | Card content                         |
-| onClick       | () => void     |          |         | Card onclick event                   |
+| PropsName | Type           | Required | Default | Description                    |
+|-----------|----------------| -------- | ------- |--------------------------------|
+| style     | CSS.Properties |          |         |                                |
+| className | string         |          |         |                                |
+| bgUrl     | string         |          |         | Card background image url      |
+| bgSize    | string         |          |  cover  | Card background image size     |
+| children  | JSX.Element    |          |         | Card content                   |
+| onClick   | () => void     |          |         | Card onclick event             |
+| isLazy    | boolean        |          |         | bg Lazy loading                |
+| preloader | JSX.Element    |          |         | bg Lazy mode preloader content |

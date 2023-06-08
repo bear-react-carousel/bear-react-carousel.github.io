@@ -377,7 +377,7 @@ const PropsTryCarousel = ({
 
         return <Carousel
             setController={setController}
-            onChange={setCarouselState}
+            onSlideChange={setCarouselState}
 
             // setCarousel={handleSetCarousel}
             data={SlideItemData}

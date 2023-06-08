@@ -41,7 +41,7 @@ import BearCarousel from 'bear-react-carousel';
 | renderNavButton    | [TRenderNavButton](#trendernavbutton)           |          |          | Custom render nav button                       |
 | renderPagination   | [TRenderPagination](#trenderpagination)         |          |          | Custom render pagination                       |
 | breakpoints        | [IPropsBreakpoints](#ipropsbreakpoints)         |          |          | RWD breakpoints                                |
-| onChange           | [TStateOnChange](#tstateonchange)               |          |          | Carousel state change event                    |
+| onSlideChange      | [TStateOnChange](#tstateonchange)               |          |          | Carousel state change event                    |
 | onMount            | () => void                                      |          |          | Carousel componentDidMount event               |
 | isDebug            | boolean                                         |          |          | Visible debug info                             |
 

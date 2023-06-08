@@ -30,9 +30,11 @@ const data = numberColors.map(row => {
 
 ## Props
 
-| PropsName     | Type           | Required | Default | Description                          |
-|-------------- | -------------- | -------- | ------- | -------------------------------------|
-| style         | CSS.Properties |          |         |                                      |
-| className     | string         |          |         |                                      |
-| imageUrl      | string         |          |         | image url                            |
-| onClick       | () => void     |          |         | image onclick event                  |
+| PropsName   | Type           | Required | Default | Description                          |
+|-------------| -------------- | -------- | ------- | -------------------------------------|
+| style       | CSS.Properties |          |         |                                      |
+| className   | string         |          |         |                                      |
+| imageUrl    | string         |          |         | image url                            |
+| onClick     | () => void     |          |         | image onclick event                  |
+| isLazy      | boolean        |          |         | Lazy loading                |
+| preloader   | JSX.Element    |          |         | Lazy mode preloader content |
