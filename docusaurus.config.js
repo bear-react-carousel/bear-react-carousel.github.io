@@ -68,6 +68,11 @@ const config = {
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
+      algolia: {
+        apiKey: 'd012934f4a6a049a495bd0b1db01333c',
+        indexName: 'bear-react-carousel',
+        appId: '7V7AV8Y672',
+      },
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
