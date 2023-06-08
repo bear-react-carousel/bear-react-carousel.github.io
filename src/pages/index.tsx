@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import LogoSvg from '@site/static/img/logo-home.svg';
 
 import styles from './index.module.css';
 import 'bear-react-carousel/dist/index.css';
@@ -11,15 +12,16 @@ import 'bear-react-carousel/dist/index.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('', styles.heroBanner)}>
       <div className="container">
+        <LogoSvg width={100}/>
         <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle text--primary text--bold">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
+            className="button button--primary button--lg"
             to="/docs/why">
-            Docusaurus Tutorial - 5min ⏱️
+              Getting Started
           </Link>
         </div>
       </div>
