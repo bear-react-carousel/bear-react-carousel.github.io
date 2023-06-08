@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbear_react_carousel_doc=self.webpackChunkbear_react_carousel_doc||[]).push([[8894],{8894:(e,c,a)=>{a.r(c)}}]);
