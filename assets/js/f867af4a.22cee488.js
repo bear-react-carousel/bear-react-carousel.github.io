@@ -1,4 +1,4 @@
-"use strict";(self.webpackChunkbear_react_carousel_doc=self.webpackChunkbear_react_carousel_doc||[]).push([[444],{531:(e,t,l)=>{l.d(t,{Z:()=>a});const a={gridGutterWidth:10,gridColumns:24,gridBreakpoints:{xs:0,sm:576,md:768,lg:992,xl:1200,xxl:1540},containerMaxWidths:{sm:540,md:720,lg:960,xl:1140,xxl:1540},gridGutterWidthMedia:{sm:10,md:10,lg:10,xl:10,xxl:10}}},8826:(e,t,l)=>{l.r(t),l.d(t,{assets:()=>z,contentTitle:()=>B,default:()=>V,frontMatter:()=>w,metadata:()=>P,toc:()=>L});var a=l(7462),o=l(7294),r=l(3905),i=l(9521),n=l(531),s=l(4040),c=l(5962);const d=new Array(12).fill("").map(((e,t)=>({level:t,totalAmount:100*t,rule:[{title:"Rem",value:200*t,hasUpTo:!0},{title:"Cache",value:120*t,hasUpTo:!0}]}))),p=d.map(((e,t)=>({text:`LV ${e.level}`,value:String(t)}))),u=e=>{let{isActive:t=!1,levelName:l,totalAmount:a,rules:r=[]}=e;return o.createElement(k,{"data-active":t},o.createElement(x,null,o.createElement(b,null,l),r.map(((e,t)=>{const l=e.value;return o.createElement(v,{key:`vipLevelCard__level-${t}`},o.createElement(f,null,o.createElement(g,null,e.title),o.createElement(h,null,"function"==typeof l?l():l)))}))),o.createElement($,null,o.createElement(v,null,o.createElement(f,null,o.createElement(g,null,"Amount"),o.createElement(h,null,0===a?"Free":`$${a}`)))))},m=(0,o.memo)(u),x=i.ZP.div`
+"use strict";(self.webpackChunkbear_react_carousel_doc=self.webpackChunkbear_react_carousel_doc||[]).push([[444],{531:(e,t,l)=>{l.d(t,{Z:()=>a});const a={gridGutterWidth:10,gridColumns:24,gridBreakpoints:{xs:0,sm:576,md:768,lg:992,xl:1200,xxl:1540},containerMaxWidths:{sm:540,md:720,lg:960,xl:1140,xxl:1540},gridGutterWidthMedia:{sm:10,md:10,lg:10,xl:10,xxl:10}}},8826:(e,t,l)=>{l.r(t),l.d(t,{assets:()=>z,contentTitle:()=>B,default:()=>V,frontMatter:()=>w,metadata:()=>P,toc:()=>L});var a=l(7462),o=l(7294),r=l(3905),i=l(9521),n=l(531),s=l(4040),c=l(5962);const d=new Array(12).fill("").map(((e,t)=>({level:t,totalAmount:100*t,rule:[{title:"Rem",value:200*t,hasUpTo:!0},{title:"Cache",value:120*t,hasUpTo:!0}]}))),p=d.map(((e,t)=>({text:`LV ${e.level}`,value:String(t)}))),u=e=>{let{isActive:t=!1,levelName:l,totalAmount:a,rules:r=[]}=e;return o.createElement(k,{"data-active":t},o.createElement(x,null,o.createElement(b,null,l),r.map(((e,t)=>{const l=e.value;return o.createElement(v,{key:`vipLevelCard__level-${t}`},o.createElement(g,null,o.createElement(f,null,e.title),o.createElement(h,null,"function"==typeof l?l():l)))}))),o.createElement($,null,o.createElement(v,null,o.createElement(g,null,o.createElement(f,null,"Amount"),o.createElement(h,null,0===a?"Free":`$${a}`)))))},m=(0,o.memo)(u),x=i.ZP.div`
     flex: 1 1 auto;
     padding: 10px 12px 0;
     z-index: 2;
@@ -42,12 +42,12 @@
         min-height: 60px;
     `}
     
-`,f=i.ZP.div`
+`,g=i.ZP.div`
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-`,g=i.ZP.div`
+`,f=i.ZP.div`
     font-size: 10px;
     transition: color .2s ease-in;
 
@@ -127,13 +127,13 @@
             
           
             ${x} {
-               ${g} {color: #fff;}
+               ${f} {color: #fff;}
                ${h} {color: #000;}
             }
             
             ${$} {
                 background-color: #fff;
-                ${g} {color: #004e6b;}
+                ${f} {color: #004e6b;}
                 ${h} {color: #004e6b;}
             }
 
@@ -141,7 +141,7 @@
         }
     `}
     
-`;var E=l(1262);const C=e=>{let{}=e;const[t,l]=(0,o.useState)(0),a=(0,o.useRef)(null),r=(0,o.useMemo)((()=>d.map((e=>({key:e.level,children:o.createElement(c.B2,{className:"py-4"},o.createElement(m,{rules:e.rule,levelName:`LV ${e.level}`,totalAmount:e.totalAmount,isActive:t===Number(e.level)}))})))),[t]),i=(0,o.useMemo)((()=>o.createElement(s.kC,{horizontal:s.cv.center},o.createElement(y,null,o.createElement("select",{title:"level",value:t,onChange:e=>u(Number(e.target.value))},p?.map((e=>o.createElement("option",{value:e.value},e.text))))))),[t]),u=e=>{l(e),a.current?.slideToActualIndex(e)};return o.createElement(Z,null,o.createElement(s.tC,{gridTheme:n.Z},i,o.createElement(E.Z,null,(()=>o.createElement(c.ZP,{controllerRef:a,isEnableLoop:!1,isCenteredSlides:!0,isEnableNavButton:!0,slidesPerView:1,spaceBetween:20,height:"270px",data:r,isSlideItemMemo:!0,breakpoints:{576:{slidesPerView:"auto"}}})))))},y=i.ZP.div`
+`;var E=l(1262);const C=e=>{let{}=e;const[t,l]=(0,o.useState)(0),[a,r]=(0,o.useState)(),i=(0,o.useMemo)((()=>d.map((e=>({key:e.level,children:o.createElement(c.B2,{className:"py-4"},o.createElement(m,{rules:e.rule,levelName:`LV ${e.level}`,totalAmount:e.totalAmount,isActive:t===Number(e.level)}))})))),[t]),u=(0,o.useMemo)((()=>o.createElement(s.kC,{horizontal:s.cv.center},o.createElement(y,null,o.createElement("select",{title:"level",value:t,onChange:e=>x(Number(e.target.value))},p?.map((e=>o.createElement("option",{value:e.value},e.text))))))),[t]),x=e=>{l(e),a?.slideToActualIndex(e)};return o.createElement(Z,null,o.createElement(s.tC,{gridTheme:n.Z},u,o.createElement(E.Z,null,(()=>o.createElement(c.ZP,{setController:r,isEnableLoop:!1,isCenteredSlides:!0,isEnableNavButton:!0,slidesPerView:1,spaceBetween:20,height:"270px",data:i,isSlideItemMemo:!0,breakpoints:{576:{slidesPerView:"auto"}}})))))},y=i.ZP.div`
   color: #737b8c;
   padding: 10px 0;
 `,Z=i.ZP.div`
