@@ -74,7 +74,7 @@ const config = {
         appId: '7V7AV8Y672',
       },
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/bear-react-carousel-card.webp',
       navbar: {
         title: 'Bear React Carousel',
         logo: {
