@@ -9,16 +9,37 @@ import Carousel from '@site/src/components/Carousel';
 
 :::caution Suggestion
 
-It is recommended to use a static height, although the auto height is very convenient, but it will cause bad visual effects, flashing to open the layout
+It is recommended to use a static height, although the auto height is very convenient, but it will cause bad visual effects, flashing to open the layout (if you follow the image height)
 :::
 
+
+## Auto Height
+If your height in slide card content
+
+```tsx
+import BearCarousel, {TBearSlideItemDataList, BearSlideCard} from 'bear-react-carousel';
+
+const data: TBearSlideItemDataList = images.map(row => {
+    return {
+        key: row.id,
+        children: <BearSlideCard>
+            <div style={{height: '200px', backgroundColor: row.color}}/>
+        </BearSlideCard>
+    };
+});
+
+<BearCarousel
+    // ...ignore some
+    data={data}
+/>
+```
 
 ## Static Height
 You can use your own units **like px, rem, %**
 
 ```tsx
 <BearCarousel
-    // ...ignore some 
+    // ...ignore some
     height="250px"
 />
 ```

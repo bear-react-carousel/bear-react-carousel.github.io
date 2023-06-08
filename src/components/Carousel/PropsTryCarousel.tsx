@@ -1,7 +1,13 @@
 import React, {ReactNodeArray, useCallback, useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 import {Col, Row} from 'bear-react-grid';
-import Carousel, {IBearCarouselObj, TBearSlideItemDataList, BearSlideCard, IInfo} from 'bear-react-carousel';
+import Carousel, {
+    IBearCarouselObj,
+    TBearSlideItemDataList,
+    BearSlideCard,
+    IInfo,
+    ICarouselState
+} from 'bear-react-carousel';
 import {anyToNumber} from 'bear-jsutils/convert';
 import cx from 'classnames';
 import {GridThemeProvider} from "bear-react-grid";
@@ -16,6 +22,7 @@ import {images} from './data';
 import {isNotEmpty} from 'bear-jsutils/equal';
 import {decodeToJson} from 'bear-jsutils/string';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import stateCarousel from "@site/src/components/Carousel/StateCarousel";
 
 
 const SlideItemData: TBearSlideItemDataList = images.map(row => {
@@ -69,8 +76,8 @@ const PropsTryCarousel = ({
     isLoadData
 }: IProps) => {
     // const prefixStorage = getStorage();
-    const controllerRef = useRef<Controller>(null);
-    const [info, setInfo] = useState<IInfo>();
+    const [controller, setController] = useState<Controller>();
+    const [carouselState, setCarouselState] = useState<ICarouselState>();
 
     const [isExpend, toggleExpend] = useState<boolean>(true);
     const {control, watch, setValue, getValues} = useForm<IFormData>({
@@ -120,11 +127,11 @@ const PropsTryCarousel = ({
 
 
     const handleGoPage = (index: number): void => {
-        controllerRef.current?.slideToActualIndex(index);
+        controller?.slideToActualIndex(index);
     };
 
     const getPageTotal = (): number => {
-        return info?.page.pageTotal?? 0;
+        return carouselState?.page.pageTotal?? 0;
     };
 
 
@@ -369,8 +376,8 @@ const PropsTryCarousel = ({
         }
 
         return <Carousel
-            controllerRef={controllerRef}
-            onChange={setInfo}
+            setController={setController}
+            onChange={setCarouselState}
 
             // setCarousel={handleSetCarousel}
             data={SlideItemData}
@@ -545,7 +552,7 @@ const PropsTryCarousel = ({
 
                     <Col lg={24} xl className="mb-4">
                 <pre>
-                    {JSON.stringify(info, null, '\t')}
+                    {JSON.stringify(carouselState, null, '\t')}
                 </pre>
 
                         {/*    <TextAreaField id="console"/>*/}

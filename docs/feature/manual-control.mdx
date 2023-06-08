@@ -1,0 +1,36 @@
+---
+sidebar_position: 8
+---
+
+import ManualControlCarousel from '@site/src/components/Carousel/ManualControlCarousel';
+
+
+# Manual Control
+
+Synchronous control navigation items, currently ***only supports one-way synchronization***
+
+```tsx
+import BearCarousel, {Controller} from "bear-react-carousel";
+
+const SyncCarousel = () => {
+    const [controller, setController] = useState<Controller>();
+
+    const handleSlide = (page: number) => {
+        controller?.slideToPage(page);
+    }
+
+    return <div>
+        <BearCarousel
+            // ...ignore some
+             setController={setController}
+        />
+
+    </div>
+}
+```
+
+Try click button
+
+<ManualControlCarousel/>
+
+

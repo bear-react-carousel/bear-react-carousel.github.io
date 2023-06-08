@@ -16,7 +16,7 @@ import BrowserOnly from "@docusaurus/BrowserOnly";
  */
 const VipLevelCarousel = ({}) => {
     const [currentLv, setCurrentLv] = useState<number>(0);
-    const controllerRef = useRef<Controller>(null);
+    const [controller, setController] = useState<Controller>();
 
 
 
@@ -55,7 +55,7 @@ const VipLevelCarousel = ({}) => {
 
     const handleCarouselGoIndex = (index: number) => {
         setCurrentLv(index);
-        controllerRef.current?.slideToActualIndex(index);
+        controller?.slideToActualIndex(index);
     };
 
 
@@ -66,7 +66,7 @@ const VipLevelCarousel = ({}) => {
             <BrowserOnly>
                 {() => {
                     return <BearCarousel
-                        controllerRef={controllerRef}
+                        setController={setController}
                         isEnableLoop={false}
                         isCenteredSlides
                         isEnableNavButton

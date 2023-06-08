@@ -11,7 +11,7 @@ import {foodImages} from "@site/src/examples/TextAnimationsCarousel/data";
 const bearSlideItemData: TBearSlideItemDataList = foodImages.map(row => {
     return {
         key: row.id,
-        children: <BearSlideImage imageUrl={row.imageUrl}/>
+        children: <BearSlideCard bgUrl={row.imageUrl}/>
     };
 });
 const autoPlayTime = 5000;
