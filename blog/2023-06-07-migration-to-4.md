@@ -73,6 +73,7 @@ const data = infos.map(row => {
 
 <BearCarousel
     data={data}
+    isEnablePageContent
     renderPagination={(pageTotal: number) => {
         return foodImages.map(row => {
             return <CustomPage key={row.id}>{row.title}</CustomPage>;
