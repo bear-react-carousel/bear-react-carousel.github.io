@@ -93,10 +93,13 @@ It is worth thinking that if the order of the array is actually changed, you can
 
 - When sliding manually, or when the number is insufficient, or moving from the first page to the last page, there will be some challenges
 
+:::tip Tip
+
 As of now, the use of Clone might still be more advantageous than disadvantageous.
+:::
 
 ## Ref
 
-[Check Not Clone Branch](https://github.com/imagine10255/bear-react-carousel/tree/test/230610/loop-no-copy-slide/imagine10255)
+[Test Not Clone Branch](https://github.com/imagine10255/bear-react-carousel/tree/test/230610/loop-no-copy-slide/imagine10255)
 
 [Swiper carousel design and how loop](https://medium.com/@imaginechiu/swiper-carousel-design-and-how-loop-88159a88f4ae)
