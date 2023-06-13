@@ -65,3 +65,20 @@ const TextAnimationsRoot = styled.div`
   
 `;
 ```
+
+
+## Layer
+
+```css
+elClassName.content{
+    position: absolute;
+    overflow: hidden;
+
+    /* fix safari image auto width: 100% */
+    min-width: 100%;
+    max-width: 100%;
+}
+```
+At first glance, this layer might appear to be unnecessary, but if we have a requirement to separate the pagination-group or nav, they would not be affected by the overflow from the outer layer.
+
+The `position: absolute;` property on this layer can prevent some internal CSS settings from squeezing open the container.
