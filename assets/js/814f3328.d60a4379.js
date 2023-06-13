@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbear_react_carousel_doc=self.webpackChunkbear_react_carousel_doc||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Swiper carousel design and how loop","permalink":"/blog/Swiper carousel loop"}]}')}}]);

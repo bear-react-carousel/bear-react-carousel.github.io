@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkbear_react_carousel_doc=self.webpackChunkbear_react_carousel_doc||[]).push([[4460],{6370:a=>{a.exports=JSON.parse('{"label":"migration","permalink":"/blog/tags/migration","allTagsPath":"/blog/tags","count":1}')}}]);
