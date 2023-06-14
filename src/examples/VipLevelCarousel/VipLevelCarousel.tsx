@@ -14,7 +14,7 @@ import BrowserOnly from "@docusaurus/BrowserOnly";
 /**
  * VipLevelCardList
  */
-const VipLevelCarousel = ({}) => {
+const VipLevelCarousel = () => {
     const [currentLv, setCurrentLv] = useState<number>(0);
     const [controller, setController] = useState<Controller>();
 
