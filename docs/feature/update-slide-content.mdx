@@ -24,7 +24,7 @@ const StateCarousel = () => {
         const isActive = row.id === activeId;
         return {
             key: [row.id, isActive].join('-'),
-            children: <BearSlideItem as="image"
+            children: <BearSlideImage
                  imageUrl={row.image}
                  onClick={() => setActiveId(row.id)}
                  style={isActive ? {transition: 'filter .4s', filter: 'blur(4px)'}: undefined}
@@ -46,6 +46,7 @@ const StateCarousel = () => {
 If you don't want to mess with the id, you can use useMemo's deps
 
 ```tsx
+import {BearSlideCard} from 'bear-react-carousel';
 const StateCarousel = () => {
     const [activeId, setActiveId] = React.useState(0);
 
@@ -53,7 +54,7 @@ const StateCarousel = () => {
         const isActive = row.id === activeId;
         return {
             key: row.id,
-            children: <BearSlideItem as="image"
+            children: <BearSlideImage
                  imageUrl={row.image}
                  onClick={() => setActiveId(row.id)}
                  style={isActive ? {transition: 'filter .4s', filter: 'blur(4px)'}: undefined}
@@ -73,4 +74,10 @@ Try click slideItem
 
 <StateCarousel/>
 
+
+:::important
+
+If you don't want your sliding action to trigger the `onclick event` of the `slideItem`, please place the `onClick` on the `BearSlideCard` or `BearSlideImage` instead.
+
+:::
 

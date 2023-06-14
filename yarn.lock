@@ -2756,10 +2756,10 @@ bear-jsutils@^3.1.0:
   resolved "https://registry.yarnpkg.com/bear-jsutils/-/bear-jsutils-3.1.0.tgz#aff940ed2896cde07b263a1f652c58dceb7b28dc"
   integrity sha512-inSK3wgOFEhzH1mEra1bvd6wWlLtvzhK7/7ESSU8fo0Nm4QqXYfxp2uBKIl/NYQN5fUb2G3Jnt4CHjM7X0+eMA==
 
-bear-react-carousel@4.0.4:
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/bear-react-carousel/-/bear-react-carousel-4.0.4.tgz#6074c4da22c58465b4bf985fab4f579c4fd91bc8"
-  integrity sha512-DtfiVE8y51c0ycx6P/PLv1gL4jflDhZ1ANfbGbKl8wD6i3KiCxXwi5Qfi6CD+8rJeZXR5/KRkqYblmOn4BJxLg==
+bear-react-carousel@4.0.6-alpha.0:
+  version "4.0.6-alpha.0"
+  resolved "https://registry.yarnpkg.com/bear-react-carousel/-/bear-react-carousel-4.0.6-alpha.0.tgz#2412864e911d21005976a042a599bf440e2b73d1"
+  integrity sha512-O4J8syXmAwdJoqWMiSL2C49fRVmCpyFvSVF/6YOKPfLoKjmdNG+G1NwI2wutOPZwBBRbd7AaSODNEjrD1U2uMg==
   dependencies:
     react "^18.x"
     react-dom "^18.x"

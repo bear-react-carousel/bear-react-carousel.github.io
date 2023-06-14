@@ -89,7 +89,7 @@ const config = {
             label: 'Guide',
           },
           {to: '/docs/getting-started', label: 'Started', position: 'right'},
-          {to: '/docs/category/migration', label: 'Migration', position: 'right'},
+          {to: '/docs/faq/migration-to-4', label: 'Migration', position: 'right'},
           {to: '/docs/props-try', label: 'Props Try', position: 'right'},
           {to: '/docs/category/feature', label: 'Feature', position: 'right'},
           {to: '/docs/category/examples', label: 'Examples', position: 'right'},
