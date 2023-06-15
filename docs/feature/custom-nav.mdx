@@ -1,0 +1,62 @@
+---
+sidebar_position: 4
+---
+
+import Carousel from '@site/src/components/Carousel/CustomNavCarousel';
+
+
+# Custom Nav
+
+If you want to customize your own navigation buttons, you can do so. The following example includes how to overwrite styles and determine the styles for the first and last buttons.
+
+
+```tsx
+import BearCarousel, {elClassName, IBearCarouselProps} from 'bear-react-carousel';
+import styled from 'styled-components';
+
+<BearCarousel 
+    // ...ignore some
+    isEnableNavButton
+    renderNavButton={(toPrev, toNext) => {
+        return <div className={elClassName.navGroup}>
+            <CustomButton type="button" className={elClassName.navPrevButton} onClick={toPrev}>
+                {'く'}
+            </CustomButton>
+            <CustomButton type="button" className={elClassName.navNextButton} onClick={toNext}>
+                {'く'}
+            </CustomButton>
+        </div>
+    }}
+/>
+
+const CustomButton = styled.button`
+  &.${elClassName.navPrevButton},
+  &.${elClassName.navNextButton}
+  {
+    background: none;
+    color: #00a400;
+    font-weight: 900;
+    font-size: 20px;
+  }
+`;
+
+
+const CustomNavCarouselRoot = styled.div`
+  .${elClassName.root}[data-first-page="true"],
+  .${elClassName.root}[data-last-page="true"]{
+       .${elClassName.navPrevButton},
+       .${elClassName.navNextButton} {
+         opacity: 1;
+         pointer-events: auto;
+       }
+  }
+`;
+
+```
+
+Check nav left/right button
+
+<Carousel
+    height="250px"
+    isDebug
+/>
