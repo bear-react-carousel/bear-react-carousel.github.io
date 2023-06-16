@@ -53,7 +53,7 @@ import BearCarousel from 'bear-react-carousel';
 | slideToPrevPage    | () => void                                                                                |         | Slide to prev page |
 | slideToNextPage    | () => void                                                                                |         | Slide to next page |
 | slideToPage        | (page: number, isUseAnimation = true) => void                                             |         | Slide target page  |
-| slideToActualIndex | (slideIndex: number, options?: {isUseAnimation?: boolean, isEmitEvent?: boolean}) => void |         | Slide target item  |
+| slideToSourceIndex | (slideIndex: number, options?: {isUseAnimation?: boolean, isEmitEvent?: boolean}) => void |         | Slide target item  |
 
 
 ### IBearSlideItemData

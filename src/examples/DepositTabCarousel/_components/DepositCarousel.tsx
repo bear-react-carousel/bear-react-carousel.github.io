@@ -40,7 +40,7 @@ const DepositCarousel = ({
     useEffect(() => {
         if(controller && activeCode){
             const targetIndex = data?.findIndex(row => row.code === activeCode) ?? -1;
-            controller?.slideToActualIndex(targetIndex - 2);
+            controller?.slideToSourceIndex(targetIndex - 2);
         }
     }, [controller, activeCode, depCodes])
 

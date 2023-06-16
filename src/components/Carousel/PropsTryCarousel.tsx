@@ -127,7 +127,7 @@ const PropsTryCarousel = ({
 
 
     const handleGoPage = (index: number): void => {
-        controller?.slideToActualIndex(index);
+        controller?.slideToSourceIndex(index);
     };
 
     const getPageTotal = (): number => {

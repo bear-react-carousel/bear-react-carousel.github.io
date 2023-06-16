@@ -55,7 +55,7 @@ const VipLevelCarousel = () => {
 
     const handleCarouselGoIndex = (index: number) => {
         setCurrentLv(index);
-        controller?.slideToActualIndex(index);
+        controller?.slideToSourceIndex(index);
     };
 
 
