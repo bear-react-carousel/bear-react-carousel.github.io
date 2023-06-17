@@ -17,33 +17,32 @@ import BearCarousel from 'bear-react-carousel';
 
 ## Props
 
-| Props Name         | Type                                            | Required | Default  | Description                                    |
-|--------------------|-------------------------------------------------| -------- |----------|------------------------------------------------|
-| style              | CSS.Properties                                  |          |          |                                                |
-| className          | string                                          |          |          |                                                |
-| setController      | (controller: [Controller](#controller)) => void |          |          | Manual control carousel                        |
-| syncCarouselRef    | RefObject<BearCarousel\>                        |          |          | Auto sync control bear-react-carousel          |
-| data               | [IBearSlideItemData](#ibearslideitemdata)[]     |          |          | Slide item data                                |
-| slidesPerView      | number \| auto                                  |          | 1        | The number of items displayed in the container |
-| slidesPerGroup     | number                                          |          | 1        | Show several items on one page                 |
-| defaultActivePage  | number                                          |          | 1        | Default slide to page                          |
-| height             | string \| [IAspectRatio](#iaspectratio)         |          |          | Carouse height                                 |
-| spaceBetween       | number                                          |          |          | distance between items                         |
-| moveTime           | number                                          |          | 500(ms)  | Slide moving time                              |
-| isCenteredSlides   | boolean                                         |          | false    | Center display mode                            |
-| isEnableLoop       | boolean                                         |          | false    | Repeat display loop mode                       |
-| isEnablePagination | boolean                                         |          | false    | Show pagination                                |
-| isEnableNavButton  | boolean                                         |          | false    | Show nav button                                |
-| isEnableMouseMove  | boolean                                         |          | true     | Mouse drag switch                              |
-| isEnableAutoPlay   | boolean                                         |          | false    | Auto slide item                                |
-| isSlideItemMemo    | boolean                                         |          | false    | data cache mode (useMemo) cache default is key |
-| autoPlayTime       | number                                          |          | 5000(ms) | Auto slide item time                           |
-| renderNavButton    | [TRenderNavButton](#trendernavbutton)           |          |          | Custom render nav button                       |
-| renderPagination   | [TRenderPagination](#trenderpagination)         |          |          | Custom render pagination                       |
-| breakpoints        | [IPropsBreakpoints](#ipropsbreakpoints)         |          |          | RWD breakpoints                                |
-| onSlideChange      | [TStateOnChange](#tstateonchange)               |          |          | Carousel state change event                    |
-| onMount            | () => void                                      |          |          | Carousel componentDidMount event               |
-| isDebug            | boolean                                         |          |          | Visible debug info                             |
+| Props Name         | Type                                                   | Required | Default  | Description                                    |
+|--------------------|--------------------------------------------------------| -------- |----------|------------------------------------------------|
+| style              | CSS.Properties                                         |          |          |                                                |
+| className          | string                                                 |          |          |                                                |
+| setController      | (controller: [Controller](#controller)) => void        |          |          | Manual control carousel                        |
+| syncCarouselRef    | RefObject<[BearCarousel](/docs/feature/sync-control)\> |          |          | Auto sync control bear-react-carousel          |
+| data               | [IBearSlideItemData](#ibearslideitemdata)[]            |          |          | Slide item data                                |
+| slidesPerView      | number \| auto                                         |          | 1        | The number of items displayed in the container |
+| slidesPerGroup     | number                                                 |          | 1        | Show several items on one page                 |
+| height             | string \| [IAspectRatio](#iaspectratio)                |          |          | Carouse height                                 |
+| spaceBetween       | number                                                 |          |          | distance between items                         |
+| moveTime           | number                                                 |          | 500(ms)  | Slide moving time                              |
+| isCenteredSlides   | boolean                                                |          | false    | Center display mode                            |
+| isEnableLoop       | boolean                                                |          | false    | Repeat display loop mode                       |
+| isEnablePagination | boolean                                                |          | false    | Show pagination                                |
+| isEnableNavButton  | boolean                                                |          | false    | Show nav button                                |
+| isEnableMouseMove  | boolean                                                |          | true     | Mouse drag switch                              |
+| isEnableAutoPlay   | boolean                                                |          | false    | Auto slide item                                |
+| isSlideItemMemo    | boolean                                                |          | false    | data cache mode (useMemo) cache default is key |
+| autoPlayTime       | number                                                 |          | 5000(ms) | Auto slide item time                           |
+| renderNavButton    | [TRenderNavButton](#trendernavbutton)                  |          |          | Custom render nav button                       |
+| renderPagination   | [TRenderPagination](#trenderpagination)                |          |          | Custom render pagination                       |
+| breakpoints        | [IPropsBreakpoints](#ipropsbreakpoints)                |          |          | RWD breakpoints                                |
+| onSlideChange      | [TStateOnChange](#tstateonchange)                      |          |          | Carousel state change event                    |
+| onMount            | () => void                                             |          |          | Carousel componentDidMount event               |
+| isDebug            | boolean                                                |          |          | Visible debug info                             |
 
 
 ### Controller
@@ -118,21 +117,19 @@ interface IBreakpointSetting {
 type TStateOnChange = (carouselState: ICarouselState) => void
 
 interface ICarouselState {
-  element: {
-    total: number
-    firstIndex: number
-    lastIndex: number
-  }
-  actual: {
+  source: {
     activeIndex: number
-    minIndex: number
-    maxIndex: number
-    firstIndex: number
     lastIndex: number
+    total: number
+  }
+  virtual: {
+    activeIndex: number
+    lastIndex: number
+    total: number
   }
   page: {
     activePage: number
-    pageTotal: number
+    total: number
   }
 }
 ```
