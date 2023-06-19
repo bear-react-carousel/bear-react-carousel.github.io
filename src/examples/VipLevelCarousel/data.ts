@@ -6,7 +6,7 @@ interface IVIPData {
     rule: IRules[],
 }
 
-export const vipData: IVIPData[] = new Array(12).fill('').map((row, index) => {
+export const vipData: IVIPData[] = Array.from({length: 12}).map((row, index) => {
     return {
         level: index,
         totalAmount: 100 * index,

@@ -131,7 +131,7 @@ const PropsTryCarousel = ({
     };
 
     const getPageTotal = (): number => {
-        return carouselState?.page.pageTotal?? 0;
+        return carouselState?.page.total?? 0;
     };
 
 
@@ -164,7 +164,7 @@ const PropsTryCarousel = ({
         let pageEls: ReactNodeArray = [];
 
         if(pageTotal > 0){
-            pageEls = new Array(pageTotal).fill('').map((row, index) => {
+            pageEls = Array.from({length: pageTotal}).map((row, index) => {
                 return <Button color="primary" key={`page_${index}`}
                     className="m-1"
                     onClick={() => handleGoPage(index + 1)}>

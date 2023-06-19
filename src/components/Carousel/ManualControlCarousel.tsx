@@ -25,8 +25,8 @@ const ManualControlCarousel = () => {
                 />
 
                 <div className="button-group mt-2">
-                    {new Array(carouselState?.page.pageTotal).fill('').map((row, i) => {
-                        return <button type="button" className="button button--sm button--info" onClick={() => controller?.slideToPage(i+1)}>Page {i+1}</button>
+                    {Array.from({length: 6}).map((row, i) => {
+                        return <button key={`control_${i}`} type="button" className="button button--sm button--info" onClick={() => controller?.slideToPage(i+1)}>Page {i+1}</button>
                     })}
                 </div>
 
