@@ -23,6 +23,7 @@
     "@bearests/form": "^0.0.29",
     "@bearests/organize": "^0.0.6",
     "@docusaurus/core": "2.4.1",
+    "@docusaurus/plugin-pwa": "^2.4.1",
     "@docusaurus/preset-classic": "2.4.1",
     "@mdx-js/react": "^1.6.22",
     "bear-jsutils": "^3.1.0",

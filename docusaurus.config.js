@@ -59,7 +59,6 @@ const config = {
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -122,6 +121,48 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        injectManifestConfig: {
+          manifestTransforms: [
+            //...
+          ],
+          modifyURLPrefix: {
+            //...
+          },
+          // We already add regular static assets (HTML, images...) to be available offline
+          // You can add more files according to your needs
+          globPatterns: ['**/*.{pdf,docx,xlsx}'],
+          // ...
+        },
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/logo.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json', // your PWA manifest
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#09d3ac',
+          },
+        ],
+      },
+    ]
+  ]
 };
 
 module.exports = config;
