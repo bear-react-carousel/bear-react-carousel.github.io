@@ -1,5 +1,7 @@
 ---
 title: Migration to 4.x version
+tags:
+  - Migration
 ---
 
 From version 0 to version 4, there have been some changes. In addition to splitting from business logic, in order to make parameters and scope clearer, you need to change them accordingly

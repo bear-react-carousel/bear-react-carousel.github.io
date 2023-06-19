@@ -1,10 +1,14 @@
 ---
 sidebar_position: 1
+tags:
+  - React Carousel
+  - React Slick
+  - Swiper
 ---
 
 # Why Bear Carousel
 
-This is a carousel developed directly using React + Flexbox 
+This is a `React Carousel` developed directly using `Flexbox` 
 
 :::tip Tip
 

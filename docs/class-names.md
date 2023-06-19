@@ -1,5 +1,7 @@
 ---
 sidebar_position: 6
+tags:
+  - Custom CSS
 ---
 
 # Class Names
