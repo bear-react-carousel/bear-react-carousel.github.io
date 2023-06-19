@@ -1,0 +1,46 @@
+---
+sidebar_position: 10
+tags:
+  - Slides Video & Image
+
+---
+
+import Carousel, {imageAndVideoData} from '@site/src/components/Carousel';
+
+# Slide Video
+Specify how many to display at a time within the visible range, or how many to display on a page
+
+```tsx
+import BearCarousel from 'bear-react-carousel';
+import ReactPlayer from 'react-player'
+
+const imagesAndVideo = [
+    {id: 1, type: 'video', video: 'https://www.youtube.com/watch?v=ysz5S6PUM-U'},
+    {id: 2, type: 'image', image: require('@site/static/img/racing/02.jpg').default},
+    {id: 3, type: 'image', image: require('@site/static/img/racing/03.jpg').default},
+    {id: 4, type: 'image', image: require('@site/static/img/racing/04.jpg').default},
+    {id: 5, type: 'image', image: require('@site/static/img/racing/05.jpg').default},
+    {id: 6, type: 'image', image: require('@site/static/img/racing/06.jpg').default},
+];
+
+const imageAndVideoData = imagesAndVideo.map(row => {
+    return {
+        key: row.id,
+        children: <BearSlideCard bgUrl={row.image}>
+            {row.video &&
+                <ReactPlayer width="100%" url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+            }
+        </BearSlideCard>
+    };
+});
+
+
+<BearCarousel 
+    // ...ignore some 
+    data={imageAndVideoData}
+/>
+```
+
+<Carousel
+    data={imageAndVideoData}
+/>
