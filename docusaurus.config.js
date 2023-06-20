@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Bear React Carousel',
-  tagline: 'Most modern mobile touch slider with hardware accelerated transitions for ReactJS',
+  tagline: 'Most modern slider with hardware accelerated transitions for ReactJS',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -62,6 +62,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{name: 'keywords', content: 'react carousel, react swipe, react slick'}],
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
