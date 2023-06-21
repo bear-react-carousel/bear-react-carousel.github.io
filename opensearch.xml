@@ -4,8 +4,8 @@
   <ShortName>Bear React Carousel</ShortName>
   <Description>Search Bear React Carousel</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://bear-react-carousel.github.io/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://bear-react-carousel.github.io/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://bear-react-carousel.github.io/opensearch.xml" />
-  <moz:SearchForm>https://bear-react-carousel.github.io/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://react-carousel.bearests.com/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://react-carousel.bearests.com/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://react-carousel.bearests.com/opensearch.xml" />
+  <moz:SearchForm>https://react-carousel.bearests.com/</moz:SearchForm>
 </OpenSearchDescription>
